@@ -8,6 +8,19 @@
     height: 50px;
 }
 
+/* nastavenie dátumu na stránke */
+#datetime{
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+/* nastavenie vypisovania menín na stránke*/
+#name_day{
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
 body{
     background-color: #152836
 }

@@ -352,6 +352,61 @@ document.addEventListener("DOMContentLoaded", () => {
     form.appendChild(btn)
     btn.appendChild(TextBtn)
 
+    // Date/Time
+
+    let date = document.createElement("p");
+    date.setAttribute("id","datetime");
+    form.appendChild(date);
+    function date_time() {
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+    }
+    const interval = setInterval(date_time(), 1000);
+    //Name Day
+    let name_day = document.createElement("p");
+    name_day.setAttribute("id","name_day");
+    form.appendChild(name_day);
+
+    function loadXMLDoc(dname) {
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        }
+        else {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.open("GET", dname, false);
+        xhttp.send();
+        return xhttp.responseXML;
+    }
+    
+    function get_name() {
+        let date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        if (month < 10) {
+            month = "0" + month;
+        }
+        if (day < 10) {
+            day = "0" + day;
+        }
+        let xmlDoc = loadXMLDoc("meniny.xml");
+        let x = xmlDoc.getElementsByTagName("den");
+        let size = x.length;
+        for(let i=0;i<size;i++){
+            if (x[i].innerHTML == month + "" + day){
+                let name_day= document.getElementById("name_day")
+                if(xmlDoc.getElementsByTagName("zaznam")[i].getElementsByTagName("SK")[0]){
+                    let linkTextContact = document.createTextNode("Dnes má meniny: "+xmlDoc.getElementsByTagName("zaznam")[i].getElementsByTagName("SK")[0].innerHTML+".");
+                    name_day.appendChild(linkTextContact);
+                }
+                else
+                    name_day.innerHTML = "V tento deň nemá nikto meniny.";
+                break;
+            }
+        }
+    }
+
+    const test = setInterval(get_name(), 1000);
     // Nav - Breadcrumb
 
     const header = document.getElementById("header");
