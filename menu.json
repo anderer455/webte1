@@ -1,0 +1,33 @@
+{
+    "menu":
+    [
+      {
+        "lvl1": "Galeria",
+        "lvl2": "Audi", 
+        "lvl3a": "A6",
+        "lvl3b": "A7",
+        "lvl3c": "A8" 
+      },
+      {
+        "lvl1": "Galeria",
+        "lvl2": "Porshe",
+        "lvl3a": "911",
+        "lvl3b": "Cayenne",
+        "lvl3c": "Panamera 970"
+      },
+      {
+        "lvl1": "Galeria",
+        "lvl2": "Mercedes Benz",
+        "lvl3a": "trieda S",
+        "lvl3b": "SLS AMG",
+        "lvl3c": "SLR McLaren"
+      },
+      {
+        "lvl1": "Galeria",
+        "lvl2": "Ferrari",
+        "lvl3a": "Ferrari 488 GTB",
+        "lvl3b": "Ferrari 488 Spider",
+        "lvl3c": "Ferrari 812 Superfast"
+      }      
+    ]
+  }
