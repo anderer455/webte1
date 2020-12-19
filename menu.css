@@ -15,7 +15,7 @@ element
      */
     ul.Menu.-horizontal,
     ul.Menu.-vertical {
-        display: inline-block;
+        display: flex;
     }
     ul.Menu.-floating {
         display: block;
@@ -70,6 +70,7 @@ element
     .Menu li > ul.-visible,
     ul.Menu.-floating.-visible {
         display: block;
+
     }
 
     /* Menu animation */
@@ -168,7 +169,7 @@ element
     .Menu.-horizontal,
     .Menu li,
     .Menu li > :first-child {
-        height: 40px;
+        height: 45px;
     }
     .Menu *[data-icon]:before,
     .Menu .Icon {
@@ -260,3 +261,8 @@ element
 /*
 ** End configurable values
 */
+
+.Menu.-horizontal a {
+    display: flex;
+    align-items: center;
+}

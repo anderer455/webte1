@@ -4,7 +4,8 @@
 }
 
 .-hasSubmenu li {
-    min-width: 300px;
+    min-width: 380px;
+    height: 50px;
 }
 
 body{
@@ -17,7 +18,14 @@ body{
 }
 .container{
     margin-top: 5%;
-    background-color: aquamarine;
+    background-color: #ffd000c4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+    padding: 50px;
 }
 .demo-gallery > ul {
     
@@ -130,19 +138,47 @@ body{
 }
 .demo-gallery.dark > ul > li a {
     border: 3px solid #04070a;
+    border: 3px solid rgba(71, 71, 71, 0.048);
+
 }
 
 .carBrand {
     display: flex !important;
     justify-content: space-between;
     align-items: center;
+    height: 50px !important;
 }
 
-.container {
+#title {
     display: flex;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 20px;
+}
+
+#title h1 {
+    font-family: "Archivo Black";
+    color: black;
+    text-shadow: 4px 0px 1px rgba(255, 208, 0, 1);
+    margin: 15px;
+}
+
+hr {
+    width:50%;
+    margin:0 auto;
+    border-top: 0.8px solid black !important;
+}
+
+#about {
+    display: flex;
+    justify-content: flex-start;
     flex-direction: column;
-    width: 80%;
-    height: auto;
-    border-radius: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+.-visible {
+    box-shadow: 0px 0px 4px black;
 }
