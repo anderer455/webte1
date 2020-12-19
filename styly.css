@@ -3,6 +3,10 @@
     z-index: 1;
 }
 
+.-hasSubmenu li {
+    min-width: 300px;
+}
+
 body{
     background-color: #152836
 }
@@ -23,7 +27,7 @@ body{
     float: left;
     margin-bottom: 15px;
     margin-right: 20px;
-    width: 200px;
+    width: 300px;
 }
 .demo-gallery > ul > li a {
     border: 3px solid #FFF;
@@ -126,4 +130,19 @@ body{
 }
 .demo-gallery.dark > ul > li a {
     border: 3px solid #04070a;
+}
+
+.carBrand {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
 }

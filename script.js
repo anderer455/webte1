@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 let home = document.createElement("li")
                 let Ahome = document.createElement("a")
                 Ahome.setAttribute("href", "index.html")
-                Ahome.setAttribute("class", "bg-info")
+                // Ahome.setAttribute("class", "bg-info")
+            
                 var linkTextHome = document.createTextNode("Home");
                 
                 //About
@@ -64,10 +65,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 let aa = document.createElement("a")
                 aa.setAttribute("href", "#")
+                aa.classList.add("carBrand")
                 var linkText = document.createTextNode("Audi");
 
-                lii.appendChild(aa)
+                let carLogoAudi = document.createElement("img");
+                carLogoAudi.setAttribute("src", "./assets/cars-logo/AUDI-logo.png")
+                carLogoAudi.style.width = "5vh"
+
+
+                lii.appendChild(aa)                  
                 aa.appendChild(linkText)
+                aa.appendChild(carLogoAudi)
+
 
                 let ul3A = document.createElement("ul")
                 
@@ -76,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let li1 = document.createElement("li")
                 let aa1 = document.createElement("a")
                 aa1.setAttribute("href", "A6.html")
-                var linkTextLi1 = document.createTextNode("A6");
+                var linkTextLi1 = document.createTextNode("A8L");
                 ul3A.appendChild(li1)
                 li1.appendChild(aa1)
                 aa1.appendChild(linkTextLi1)
@@ -84,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let li2 = document.createElement("li")
                 let aa2 = document.createElement("a")
                 aa2.setAttribute("href", "#")
-                var linkTextLi2 = document.createTextNode("A7");
+                var linkTextLi2 = document.createTextNode("RS 7 Sportback");
                 ul3A.appendChild(li2)
                 li2.appendChild(aa2)
                 aa2.appendChild(linkTextLi2)
@@ -92,52 +101,61 @@ document.addEventListener("DOMContentLoaded", () => {
                 let li3 = document.createElement("li") 
                 let aa3 = document.createElement("a")
                 aa3.setAttribute("href", "#")
-                var linkTextLi3 = document.createTextNode("A8");
+                var linkTextLi3 = document.createTextNode("RS Q8");
                 ul3A.appendChild(li3)
                 li3.appendChild(aa3)
                 aa3.appendChild(linkTextLi3)
 
-                // Porshe
+
+                // BMW
+            
+                let liiB = document.createElement("li")
+                liiB.setAttribute("class", "-hasSubmenu")
                 
-                let liiP = document.createElement("li")
-                liiP.setAttribute("class", "-hasSubmenu")
+                ul2.appendChild(liiB)
+
+                let aaB = document.createElement("a")
+                aaB.setAttribute("href", "#")
+                aaB.classList.add("carBrand")
+                var linkTextB = document.createTextNode("BMW");
+
+                let carLogoBmw = document.createElement("img");
+                carLogoBmw.setAttribute("src", "./assets/cars-logo/BMW-logo.png")
+                carLogoBmw.style.width = "4vh"
+
+
+                liiB.appendChild(aaB)
+                aaB.appendChild(linkTextB)
+                aaB.appendChild(carLogoBmw)
+
+                let ul3B = document.createElement("ul")
                 
-                ul2.appendChild(liiP)
+                liiB.appendChild(ul3B)
 
-                let aaP = document.createElement("a")
-                aaP.setAttribute("href", "#")
-                var linkTextP = document.createTextNode("Porshe");
+                let li1B = document.createElement("li")
+                let aa1B = document.createElement("a")
+                aa1B.setAttribute("href", "http://www.facebook.com")
+                var linkTextLi1B = document.createTextNode("850i Cabrio");
+                ul3B.appendChild(li1B)
+                li1B.appendChild(aa1B)
+                aa1B.appendChild(linkTextLi1B)
 
-                liiP.appendChild(aaP)
-                aaP.appendChild(linkTextP)
+                let li2B = document.createElement("li")
+                let aa2B = document.createElement("a")
+                aa2B.setAttribute("href", "#")
+                var linkTextLi2B = document.createTextNode("M5 Competition");
+                ul3B.appendChild(li2B)
+                li2B.appendChild(aa2B)
+                aa2B.appendChild(linkTextLi2B)
 
-                let ul3P = document.createElement("ul")
+                let li3B = document.createElement("li") 
+                let aa3B = document.createElement("a")
+                aa3B.setAttribute("href", "#")
+                var linkTextLi3B = document.createTextNode("X6 M");
+                ul3B.appendChild(li3B)
+                li3B.appendChild(aa3B)
+                aa3B.appendChild(linkTextLi3B)
                 
-                liiP.appendChild(ul3P)
-
-                let li1P = document.createElement("li")
-                let aa1P = document.createElement("a")
-                aa1P.setAttribute("href", "http://www.facebook.com")
-                var linkTextLi1P = document.createTextNode("911");
-                ul3P.appendChild(li1P)
-                li1P.appendChild(aa1P)
-                aa1P.appendChild(linkTextLi1P)
-
-                let li2P = document.createElement("li")
-                let aa2P = document.createElement("a")
-                aa2P.setAttribute("href", "#")
-                var linkTextLi2P = document.createTextNode("Cayenne");
-                ul3P.appendChild(li2P)
-                li2P.appendChild(aa2P)
-                aa2P.appendChild(linkTextLi2P)
-
-                let li3P = document.createElement("li") 
-                let aa3P = document.createElement("a")
-                aa3P.setAttribute("href", "#")
-                var linkTextLi3P = document.createTextNode("Panamera 970");
-                ul3P.appendChild(li3P)
-                li3P.appendChild(aa3P)
-                aa3P.appendChild(linkTextLi3P)
 
                 // Mercedes Benz
                 
@@ -148,10 +166,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 let aaM = document.createElement("a")
                 aaM.setAttribute("href", "#")
+                aaM.classList.add("carBrand")
                 var linkTextM = document.createTextNode("Mercedes Benz");
+
+                let carLogoMb = document.createElement("img");
+                carLogoMb.setAttribute("src", "./assets/cars-logo/MB-logo.png")
+                carLogoMb.style.width = "4vh"
 
                 liiM.appendChild(aaM)
                 aaM.appendChild(linkTextM)
+                aaM.appendChild(carLogoMb)
 
                 let ul3M = document.createElement("ul")
                 
@@ -160,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let li1M = document.createElement("li")
                 let aa1M = document.createElement("a")
                 aa1M.setAttribute("href", "http://www.facebook.com")
-                var linkTextLi1M = document.createTextNode("Class S");
+                var linkTextLi1M = document.createTextNode("GLS 63 4MATIC+");
                 ul3M.appendChild(li1M)
                 li1M.appendChild(aa1M)
                 aa1M.appendChild(linkTextLi1M)
@@ -168,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let li2M = document.createElement("li")
                 let aa2M = document.createElement("a")
                 aa2M.setAttribute("href", "#")
-                var linkTextLi2M = document.createTextNode("SLS AMG");
+                var linkTextLi2M = document.createTextNode("GT 63 S");
                 ul3M.appendChild(li2M)
                 li2M.appendChild(aa2M)
                 aa2M.appendChild(linkTextLi2M)
@@ -176,52 +200,51 @@ document.addEventListener("DOMContentLoaded", () => {
                 let li3M = document.createElement("li") 
                 let aa3M = document.createElement("a")
                 aa3M.setAttribute("href", "#")
-                var linkTextLi3M = document.createTextNode("SLR McLaren");
+                var linkTextLi3M = document.createTextNode("S 500 4MATIC");
                 ul3M.appendChild(li3M)
                 li3M.appendChild(aa3M)
                 aa3M.appendChild(linkTextLi3M)
+               
 
-                // Ferrari
+                // Porsche
                 
-                let liiF = document.createElement("li")
-                liiF.setAttribute("class", "-hasSubmenu")
+                let liiP = document.createElement("li")
+                liiP.setAttribute("class", "-hasSubmenu")
                 
-                ul2.appendChild(liiF)
+                ul2.appendChild(liiP)
 
-                let aaF = document.createElement("a")
-                aaF.setAttribute("href", "#")
-                var linkTextF = document.createTextNode("Ferrari");
+                let aaP = document.createElement("a")
+                aaP.setAttribute("href", "#")
+                aaP.classList.add("carBrand")
+                var linkTextP = document.createTextNode("Porsche");
 
-                liiF.appendChild(aaF)
-                aaF.appendChild(linkTextF)
+                let carLogoPorsche = document.createElement("img");
+                carLogoPorsche.setAttribute("src", "./assets/cars-logo/PORSCHE-logo.png")
+                carLogoPorsche.style.width = "3.8vh"
 
-                let ul3F = document.createElement("ul")
+                liiP.appendChild(aaP)
+                aaP.appendChild(linkTextP)
+                aaP.appendChild(carLogoPorsche)
+
+                let ul3P = document.createElement("ul")
                 
-                liiF.appendChild(ul3F)
+                liiP.appendChild(ul3P)
 
-                let li1F = document.createElement("li")
-                let aa1F = document.createElement("a")
-                aa1F.setAttribute("href", "http://www.facebook.com")
-                var linkTextLi1F = document.createTextNode("Ferrari 488 GTB");
-                ul3F.appendChild(li1F)
-                li1F.appendChild(aa1F)
-                aa1F.appendChild(linkTextLi1F)
+                let li1P = document.createElement("li")
+                let aa1P = document.createElement("a")
+                aa1P.setAttribute("href", "http://www.facebook.com")
+                var linkTextLi1P = document.createTextNode("911 Turbo S");
+                ul3P.appendChild(li1P)
+                li1P.appendChild(aa1P)
+                aa1P.appendChild(linkTextLi1P)
 
-                let li2F = document.createElement("li")
-                let aa2F = document.createElement("a")
-                aa2F.setAttribute("href", "#")
-                var linkTextLi2F = document.createTextNode("Ferrari 488 Spider");
-                ul3F.appendChild(li2F)
-                li2F.appendChild(aa2F)
-                aa2F.appendChild(linkTextLi2F)
-
-                let li3F = document.createElement("li") 
-                let aa3F = document.createElement("a")
-                aa3F.setAttribute("href", "#")
-                var linkTextLi3F = document.createTextNode("Ferrari 812 Superfast");
-                ul3F.appendChild(li3F)
-                li3F.appendChild(aa3F)
-                aa3F.appendChild(linkTextLi3F)
+                let li2P = document.createElement("li")
+                let aa2P = document.createElement("a")
+                aa2P.setAttribute("href", "#")
+                var linkTextLi2P = document.createTextNode("Cayenne Turbo Coupé");
+                ul3P.appendChild(li2P)
+                li2P.appendChild(aa2P)
+                aa2P.appendChild(linkTextLi2P)
 
     //Contact
     let contact = document.createElement("li")
@@ -299,7 +322,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ol.appendChild(liNavData)
     liNavData.appendChild(aNavData)
     aNavData.appendChild(TextNavData)
-
 
 
 })
