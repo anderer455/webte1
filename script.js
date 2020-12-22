@@ -1,4 +1,6 @@
 
+var plz_work = [];
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const miesto = document.getElementById("DDD");
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     d1.appendChild(d2)
 
     let ul1 = document.createElement("ul")
+    ul1.setAttribute("id", "sitemaps")
     ul1.setAttribute("class", "Menu -horizontal")
     d2.appendChild(ul1)
 
@@ -65,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ul2.appendChild(lii)
 
     let aa = document.createElement("a")
-    aa.setAttribute("href", "#")
+    aa.setAttribute("href", "audi.html")
     aa.classList.add("carBrand")
     var linkText = document.createTextNode("Audi");
 
@@ -354,11 +357,13 @@ document.addEventListener("DOMContentLoaded", () => {
     header.appendChild(nav)
 
     let ol = document.createElement("ol")
-    ol.setAttribute("class", "breadcrumb")
+    ol.setAttribute("id", "breadcrumbs")
+    //ol.setAttribute("class", "breadcrumb")
     nav.appendChild(ol)
 
-    let liNavHome = document.createElement("li")
+    /*let liNavHome = document.createElement("li")
     liNavHome.setAttribute("class", "breadcrumb-item")
+    liNavHome.setAttribute("id", "home")
     let aNavHome = document.createElement("a")
     aNavHome.setAttribute("href", "#")
     var TextNavHome = document.createTextNode("Home");
@@ -368,22 +373,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let liNavLib = document.createElement("li")
     liNavLib.setAttribute("class", "breadcrumb-item")
+    liNavLib.setAttribute("id", "about")
     let aNavLib = document.createElement("a")
     aNavLib.setAttribute("href", "#")
-    var TextNavLib = document.createTextNode("Library");
+    var TextNavLib = document.createTextNode("About");
     ol.appendChild(liNavLib)
     liNavLib.appendChild(aNavLib)
     aNavLib.appendChild(TextNavLib)
 
+    let liNavGal = document.createElement("li")
+    liNavGal.setAttribute("class", "breadcrumb-item")
+    liNavGal.setAttribute("id", "gallery")
+    let aNavGal = document.createElement("a")
+    aNavGal.setAttribute("href", "#")
+    var TextNavGal = document.createTextNode("Gallery");
+    ol.appendChild(liNavGal)
+    liNavGal.appendChild(aNavGal)
+    aNavLiGal.appendChild(TextNavGal)
+
     let liNavData = document.createElement("li")
     liNavData.setAttribute("class", "breadcrumb-item active")
+    liNavData.setAttribute("id", "contact")
     liNavData.setAttribute("aria-current", "page")
     let aNavData = document.createElement("a")
     aNavData.setAttribute("href", "#")
-    var TextNavData = document.createTextNode("Data");
+    var TextNavData = document.createTextNode("Contact");
     ol.appendChild(liNavData)
     liNavData.appendChild(aNavData)
-    aNavData.appendChild(TextNavData)
+    aNavData.appendChild(TextNavData)*/
 
     // Search names/dates
 
@@ -442,7 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         name = "V tento deň má/majú meniny: " + xmlDoc.getElementsByTagName("zaznam")[i].getElementsByTagName("SK")[0].innerHTML + ".";
                         document.getElementById("modal_text").innerHTML = name;
                     }
-                    else{
+                    else {
                         name = "V tento deň nemá nikto meniny.";
                         document.getElementById("modal_text").innerHTML = name;
                     }
@@ -478,7 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 message = "Meniny s menom " + xmlDoc.getElementsByTagName("zaznam")[j].getElementsByTagName("SK")[0].innerHTML + " sú " + den;
                                 document.getElementById("modal_text").innerHTML = message;
                             }
-                            else{
+                            else {
                                 message = "Toto meno sa v slovenskom kalendáry nenachádza.";
                                 document.getElementById("modal_text").innerHTML = message;
                             }
@@ -492,7 +509,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 message = "Meniny s menom " + xmlDoc.getElementsByTagName("zaznam")[j].getElementsByTagName("SK")[0].innerHTML + " sú " + den;
                                 document.getElementById("modal_text").innerHTML = message;
                             }
-                            else{
+                            else {
                                 message = "Toto meno sa v slovenskom kalendáry nenachádza.";
                                 document.getElementById("modal_text").innerHTML = message;
                             }
@@ -502,7 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
             else
-            document.getElementById("modal_text").innerHTML = "Zadali ste zlá formát! Povolené formáty sú DD.MM. alebo meno."
+                document.getElementById("modal_text").innerHTML = "Zadali ste zlá formát! Povolené formáty sú DD.MM. alebo meno."
         }
         else {
             document.getElementById("modal_text").innerHTML = "Musíte zatať dátum v tvare DD.MM. alebo meno ktoré chcete vyhľadať."
@@ -510,4 +527,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     form.addEventListener('submit', search);
+    Ahome.addEventListener('click', plz_kill_me_final());
+    //Aabout.addEventListener('click', plz_kill_me_final());
+    //Acontact.addEventListener('click', plz_kill_me_final());
+    kill_me_plz();
 })
+function plz_kill_me_final() {
+    let url = document.referrer;
+    let local = localStorage.getItem("kys");
+    if (!local) {
+        local = "";
+        //local[0] = "";
+        //local[1] = "";
+    }
+    local = local.split(',');
+    local.push(url);
+    localStorage.setItem("kys", local);
+}
+
+function kill_me_plz() {
+    let local = localStorage.getItem("kys");
+    if (!local) {
+        local = " ";
+        //local[0] = "";
+        //local[1] = "";
+    }
+    local = local.split(',');
+    if(local[0] == "" || local[0] == " ")
+        local.shift();
+    let placeholder = document.getElementById("breadcrumbs");
+    let li = document.createElement("li");
+    for (let i = 0; i < local.length; i++) {
+        let li = document.createElement("li");
+        li.append(local[i]);
+        placeholder.append(li);
+    }
+    localStorage.setItem("kys", local);
+
+
+    console.log("local=" + local);
+    console.log(localStorage.getItem("kys"));
+}
