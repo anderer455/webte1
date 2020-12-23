@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 Ahome.setAttribute("href", "index.html")
                 // Ahome.setAttribute("class", "bg-info")
             
-                var linkTextHome = document.createTextNode("Home");
+                var linkTextHome = document.createTextNode("Domov");
                 
                 //About
                 let about = document.createElement("li")
                 let Aabout = document.createElement("a")
                 Aabout.setAttribute("href", "about.html")
-                var linkTextAbout = document.createTextNode("About");
+                var linkTextAbout = document.createTextNode("O nás");
                 
                 
                 ul1.appendChild(home)
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 galery.setAttribute("class", "-hasSubmenu")
                 let Agalery = document.createElement("a")
                 Agalery.setAttribute("href", "#")
-                var linkTextGalery = document.createTextNode("Gallery");
+                var linkTextGalery = document.createTextNode("Ponuka");
 
                 ul1.appendChild(galery)
                 galery.appendChild(Agalery)
@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
 
                 let li1 = document.createElement("li")
+                li1.classList.add("noSubmenu")
                 let aa1 = document.createElement("a")
                 aa1.setAttribute("href", "A8L.html")
                 aa1.classList.add("menuCarBrand")
@@ -102,8 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 let li2 = document.createElement("li")
+                li2.classList.add("noSubmenu")
                 let aa2 = document.createElement("a")
-                aa2.setAttribute("href", "#")
+                aa2.setAttribute("href", "RS7.html")
                 aa2.classList.add("menuCarBrand")
                 var linkTextLi2 = document.createTextNode("RS 7 Sportback");
                 ul3A.appendChild(li2)
@@ -115,9 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 thumbnailRs7.style.width = "12vh"
                 aa2.appendChild(thumbnailRs7)
 
-                let li3 = document.createElement("li") 
+                let li3 = document.createElement("li")
+                li3.classList.add("noSubmenu") 
                 let aa3 = document.createElement("a")
-                aa3.setAttribute("href", "#")
+                aa3.setAttribute("href", "RSQ8.html")
                 aa3.classList.add("menuCarBrand")
                 var linkTextLi3 = document.createTextNode("RS Q8");
                 ul3A.appendChild(li3)
@@ -156,8 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 liiB.appendChild(ul3B)
 
                 let li1B = document.createElement("li")
+                li1B.classList.add("noSubmenu")
                 let aa1B = document.createElement("a")
-                aa1B.setAttribute("href", "http://www.facebook.com")
+                aa1B.setAttribute("href", "850i.html")
                 aa1B.classList.add("menuCarBrand")
                 var linkTextLi1B = document.createTextNode("850i Cabrio");
                 ul3B.appendChild(li1B)
@@ -171,8 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 let li2B = document.createElement("li")
+                li2B.classList.add("noSubmenu")
                 let aa2B = document.createElement("a")
-                aa2B.setAttribute("href", "#")
+                aa2B.setAttribute("href", "M5.html")
                 aa2B.classList.add("menuCarBrand")
                 var linkTextLi2B = document.createTextNode("M5 Competition");
                 ul3B.appendChild(li2B)
@@ -185,8 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 aa2B.appendChild(thumbnailM5)
 
                 let li3B = document.createElement("li") 
+                li3B.classList.add("noSubmenu")
                 let aa3B = document.createElement("a")
-                aa3B.setAttribute("href", "#")
+                aa3B.setAttribute("href", "X6M.html")
                 aa3B.classList.add("menuCarBrand")
                 var linkTextLi3B = document.createTextNode("X6 M");
                 ul3B.appendChild(li3B)
@@ -224,8 +230,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 liiM.appendChild(ul3M)
 
                 let li1M = document.createElement("li")
+                li1M.classList.add("noSubmenu")
                 let aa1M = document.createElement("a")
-                aa1M.setAttribute("href", "http://www.facebook.com")
+                aa1M.setAttribute("href", "GLS63.html")
                 aa1M.classList.add("menuCarBrand")
                 var linkTextLi1M = document.createTextNode("GLS 63 4MATIC+");
                 ul3M.appendChild(li1M)
@@ -238,10 +245,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 aa1M.appendChild(thumbnailGLS)
 
                 let li2M = document.createElement("li")
+                li2M.classList.add("noSubmenu")
                 let aa2M = document.createElement("a")
-                aa2M.setAttribute("href", "#")
+                aa2M.setAttribute("href", "GT63S.html")
                 aa2M.classList.add("menuCarBrand")
-                var linkTextLi2M = document.createTextNode("GT 63 S");
+                var linkTextLi2M = document.createTextNode("GT 63 S 4MATIC+");
                 ul3M.appendChild(li2M)
                 li2M.appendChild(aa2M)
                 aa2M.appendChild(linkTextLi2M)
@@ -251,9 +259,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 thumbnailGT.style.width = "10.5vh"
                 aa2M.appendChild(thumbnailGT)
 
-                let li3M = document.createElement("li") 
+                let li3M = document.createElement("li")
+                li3M.classList.add("noSubmenu") 
                 let aa3M = document.createElement("a")
-                aa3M.setAttribute("href", "#")
+                aa3M.setAttribute("href", "S500.html")
                 aa3M.classList.add("menuCarBrand")
                 var linkTextLi3M = document.createTextNode("S 500 4MATIC");
                 ul3M.appendChild(li3M)
@@ -291,8 +300,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 liiP.appendChild(ul3P)
 
                 let li1P = document.createElement("li")
+                li1P.classList.add("noSubmenu")
                 let aa1P = document.createElement("a")
-                aa1P.setAttribute("href", "http://www.facebook.com")
+                aa1P.setAttribute("href", "911TurboS.html")
                 aa1P.classList.add("menuCarBrand")
                 var linkTextLi1P = document.createTextNode("911 Turbo S");
                 ul3P.appendChild(li1P)
@@ -305,8 +315,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 aa1P.appendChild(thumbnail911S)
 
                 let li2P = document.createElement("li")
+                li2P.classList.add("noSubmenu")
                 let aa2P = document.createElement("a")
-                aa2P.setAttribute("href", "#")
+                aa2P.setAttribute("href", "CayenneTurbo.html")
                 aa2P.classList.add("menuCarBrand")
                 var linkTextLi2P = document.createTextNode("Cayenne Turbo Coupé");
                 ul3P.appendChild(li2P)
@@ -322,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let contact = document.createElement("li")
     let Acontact = document.createElement("a")
     Acontact.setAttribute("href", "contact.html")
-    linkTextContact = document.createTextNode("Contact");
+    linkTextContact = document.createTextNode("Kontakt");
 
     ul1.appendChild(contact)
     contact.appendChild(Acontact)
@@ -333,6 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let d2S = document.createElement("div");
     d2S.setAttribute("class", "col-md-6");
     d2S.setAttribute("style", "float: right;");
+    d2S.id = "searchBarContainer";
     d1.appendChild(d2S);
 
     let form = document.createElement("form");
@@ -423,12 +435,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const header = document.getElementById("header");
     let nav = document.createElement("nav")
     nav.setAttribute("aria-label", "breadcrumb")
-
+    nav.id = "breadcrumbs"
     header.appendChild(nav)
 
-    let ol = document.createElement("ol")
-    ol.setAttribute("id", "breadcrumbs")
-    nav.appendChild(ol)
+    // let ol = document.createElement("ol")
+    // ol.setAttribute("id", "breadcrumbs")
+    // nav.appendChild(ol)
 
 
     // Search names/dates
@@ -598,11 +610,11 @@ function breadcrumbs() {
         let a = document.createElement("a");
         a.setAttribute("href", local[i])
         if (local[i].includes("index"))
-            a.innerHTML = "Home";
+            a.innerHTML = "Domov";
         else if (local[i].includes("about"))
-            a.innerHTML = "About";
+            a.innerHTML = "O nás";
         else if (local[i].includes("contact"))
-            a.innerHTML = "Contact";
+            a.innerHTML = "Kontakt";
         else if (local[i].includes("A8L"))
             a.innerHTML = "A8L";
         else if (local[i].includes("RS7"))
@@ -638,3 +650,4 @@ function breadcrumbs() {
     }
     localStorage.setItem("kys", local);
 }
+

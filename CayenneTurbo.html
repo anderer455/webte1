@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Play" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="styly.css">
     <script src="menu.js"></script>
@@ -11,28 +13,147 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="../dist/css/lightgallery.css" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/e73d803768.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
     <header style="margin-top: 5px;" id="header">
-        <div id="DDD"></div>
+        <div id="DDD">
+            <div id="dateTimeName"></div>
+            <div id="title">         
+                <h1>
+                    <img src="assets/carlogo.png" alt="car_ilustration" style="width: 132px;">
+                    SupremeCars
+                </h1>                            
+            </div>
+            <hr>    
+        </div>
     </header>
+    
+    <div class="container-fluid">
+        <h1>Porsche Cayenne Turbo Coupé</h1>
+        <div class="carDescription">
+            <p>Here's all you really need to know about the 2020 Porsche Cayenne Turbo Coupe: With its 541-hp twin-turbo 4.0-liter V-8, 
+                eight-speed automatic transmission, and all-wheel drive, the new fastback version of Porsche's largest SUV is mechanically 
+                identical to the conventional Cayenne Turbo squareback, and the two vehicles feel exactly the same from behind the wheel. 
+                Same brutal acceleration, same impressive driving dynamics, same big fat grin on your face when you mat their accelerators.
+                With its 0.7-inch lower roofline and 0.7-inch wider rear fenders, the coupe looks a touch better than the SUV, which is the point. 
+                It also costs $2300 more at $131,450 to start, albeit $34,300 less than the top-dog 670-hp Turbo S E-Hybrid model that we've already driven. 
+                Opting for the Turbo Coupe over the regular Cayenne Turbo nets you four seats as standard (a three-across rear bench is optional), and you lose 
+                six cubic feet of cargo space, although the rear seat is 1.2 inches lower to compensate for the lower roofline. None of that will matter much 
+                once you see it in the metal, though. This fastback SUV makes its key rivals, the BMW X6 M and Mercedes-AMG GLE63 S Coupe, look like they were 
+                designed in the dark.
+            </p>        
+        </div>
+            <div class="demo-gallery">                
+                    <ul id="lightgallery" class="list-unstyled row">                
+                        <li data-src="assets/cars-images/CayenneS/cayenneS-two.jpg" data-sub-html="<h4>Audi A6</h4><p>Text</p>">
+                            <a href="">
+                                <img src="assets/cars-images/CayenneS/cayenneS-two.jpg" alt="Thumb-1">
+                            </a>
+                        </li>
+                        <li data-src="assets/cars-images/CayenneS/cayenneS-back.jpg" data-sub-html="<h4>Audi A6</h4><p>Text</p>">
+                            <a href="">
+                                <img  src="assets/cars-images/CayenneS/cayenneS-back.jpg" alt="Thumb-2">
+                            </a>
+                        </li>
+                        <li  data-src="assets/cars-images/CayenneS/cayenneS-back2.jpg" data-sub-html="<h4>Audi A6</h4><p>Text</p>">
+                            <a href="">
+                                <img src="assets/cars-images/CayenneS/cayenneS-back2.jpg" alt="Thumb-3">
+                            </a>
+                        </li>
+                        <li  data-src="assets/cars-images/CayenneS/cayenneS-interior.jpeg" data-sub-html="<h4>Audi A6</h4><p>Text</p>" >
+                            <a href="">
+                                <img src="assets/cars-images/CayenneS/cayenneS-interior.jpeg" alt="Thumb-4">
+                            </a>
+                        </li>
+                    </ul>
+                
+            </div>      
+        <div class="carParameters row">
+            <div class="carParametersItem">
+                <p class="">
+                    <i class="fas fa-bolt"></i>
+                    Výkon
+                </p>
+                <div class="carParametersItemDetail">
+                    <p class="carParametersItemDetail_Number">404</p>
+                    <p class="carParametersItemDetail_Unit"> kw</p>
+                </div>
+            </div>
+            <div class="carParametersItem">
+                <p class="">
+                    <i class="fas fa-stopwatch"></i>
+                    Zrýchlenie 0-100
+                </p>
+                <div class="carParametersItemDetail">
+                    <p class="carParametersItemDetail_Number">3,9</p>
+                    <p class="carParametersItemDetail_Unit"> s</p>
+                </div>
+            </div>
+            <div class="carParametersItem">
+                <p class="">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Krútiaci Moment
+                </p>
+                <div class="carParametersItemDetail">
+                    <p class="carParametersItemDetail_Number">770</p>
+                    <p class="carParametersItemDetail_Unit"> Nm</p>
+                </div>
+            </div>
+            <div class="carParametersItem">
+                <p class="">
+                    <i class="fas fa-gas-pump"></i>
+                    Spotreba /100km
+                </p>
+                <div class="carParametersItemDetail">
+                    <p class="carParametersItemDetail_Number">13.5 - 11.6</p>
+                    <p class="carParametersItemDetail_Unit"> l</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="container">
-        <h6 style="font-size: 100px;">Comming Soon</h6>
+        <div class="row">
+            <table class="table table-hover table-striped table-bordered">
+                <thead class="thead-dark table-hover">
+                  <tr>                    
+                    <th scope="col">DNI</th>
+                    <th scope="col">2-3 DNI</th>
+                    <th scope="col">4-10 DNÍ</th>
+                    <th scope="col">11-17 DNÍ</th>
+                    <th scope="col">18-24 DNÍ</th>
+                    <th scope="col">25-29 DNÍ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>EUR</b></td>
+                    <td class="td-cash" style="color: #ff0000;"><b>85.00€</b></td>                    
+                    <td class="td-cash" style="color: #ff0000;"><b>79.00€</b></td>
+                    <td class="td-cash" style="color: #ff0000;"><b>75.00€</b></td>
+                    <td class="td-cash" style="color: #008a0b;"><b>65.00€</b></td>
+                    <td class="td-cash" style="color: #56c700;"><b>59.00€</b></td>
+                  </tr>
+                  
+                </tbody>
+              </table>                     
+        </div>        
     </div>
 
-
+    
     <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
     <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
     <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
     <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
     <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
     <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+    <script src="../demo/js/lg-rotate.js"></script>
     <script>
-        lightGallery(document.getElementById('lightgallery'));
-    </script>
+        lightGallery(document.getElementById('lightgallery'), {
+            width: "100%",
+        }); 
+    </script>   
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -43,4 +164,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
 </html>
