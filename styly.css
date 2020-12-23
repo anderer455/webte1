@@ -10,19 +10,37 @@
 
 /* nastavenie dátumu na stránke */
 #datetime{
-    margin-top: 5px;
-    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 0px;
     font-weight: 600;
 }
 /* nastavenie vypisovania menín na stránke*/
 #name_day{
-    margin-top: 5px;
-    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 0px;
     font-weight: 600;
 }
 
+/* cas a meniny */
+#dateTimeName {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+/* tumbnaily aut v menu */
+.menuCarBrand {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px !important;
+}
+
 body{
-    background-color: #152836
+    background-color: #ffffff
 }
 .obrazky{
     height: 300px;
@@ -31,24 +49,22 @@ body{
 }
 .container{
     margin-top: 5%;
-    background-color: #ffd000c4;
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     height: auto;
-    border-radius: 20px;
-    padding: 50px;
 }
-.demo-gallery > ul {
-    
-    margin-bottom: 0;
+.demo-gallery > ul {    
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
 }
 .demo-gallery > ul > li {
     float: left;
-    margin-bottom: 15px;
-    margin-right: 20px;
-    width: 300px;
+    width: 400px;
+    margin: 25px;
+    box-shadow: 5px 4px 15px -2px #000000;
 }
 .demo-gallery > ul > li a {
     border: 3px solid #FFF;
@@ -155,20 +171,14 @@ body{
 
 }
 
-.carBrand {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px !important;
-}
-
+/* logo */
 #title {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 50px;
-    margin: 20px;
+    margin-bottom: 10px;
 }
 
 #title h1 {
@@ -178,7 +188,7 @@ body{
     margin: 15px;
 }
 
-hr {
+header hr {
     width:50%;
     margin:0 auto;
     border-top: 0.8px solid black !important;
@@ -195,3 +205,82 @@ hr {
 .-visible {
     box-shadow: 0px 0px 4px black;
 }
+
+/* parametre auta */
+.carParameters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.carParameters :last-child {
+    border-right: none;
+}
+
+.carParametersItem {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+    align-items: center;
+    border-right: 1px solid #000;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+
+.carParametersItemDetail {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.carParametersItemDetail_Number {
+    font-size: 4rem;
+}
+
+.carParametersItemDetail_Unit {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.container-fluid .row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 50px !important;
+}
+
+.container-fluid {
+    text-align: center;
+    
+}
+
+.container-fluid h1 {
+    margin: 50px;
+}
+
+
+/* small screen devices */
+@media only screen and (max-width: 500px) {
+    .carParametersItem {
+        margin: 15px;
+        border-bottom: 1px solid #000;
+        border-right: 0px;
+    }
+    .carParameters :last-child {
+        border-bottom: none;
+    }
+}
+
+.row table {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+}
+
+.td-cash {
+    transition: all .2s ease-in-out;
+}
+
+.td-cash:hover { transform: scale(1.3); }
