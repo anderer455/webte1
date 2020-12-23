@@ -2,12 +2,23 @@
     background-color: rgba(255,255,255,1);
     z-index: 1;
 }
-
+#breadcrumbs li{
+    display:inline;
+    width: 50%;
+    margin-left: 0.5vw;
+}
+.notFirst::before{
+    content: "/";
+    margin-right: 0.5vw;
+}
+#modal_text{
+    font-weight: bold;
+    font-size: 120%;
+}
 .-hasSubmenu li {
     min-width: 380px;
     height: 50px;
 }
-
 /* nastavenie dátumu na stránke */
 #datetime{
     margin-right: 5px;
@@ -49,11 +60,11 @@ body{
 }
 .container{
     margin-top: 5%;
-    display: flex;
+    /* display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: auto;
+    height: auto; */
 }
 .demo-gallery > ul {    
     margin-bottom: 50px;
