@@ -4,330 +4,355 @@ var plz_work = [];
 document.addEventListener("DOMContentLoaded", () => {
 
     const miesto = document.getElementById("DDD");
+
+    // HEADER(LOGO + NAMEDAY)
+    let dateTimeName = document.createElement("div")
+    dateTimeName.id = "dateTimeName"
+    miesto.appendChild(dateTimeName)
+
+    let title = document.createElement("div")
+    title.id = "title"
+    miesto.append(title)
+
+    let logo = document.createElement("img")
+    logo.setAttribute("src","assets/carlogo.png")
+    logo.style.width = "132px"
+    
+    let pageName = document.createElement("h1")
+    pageName.innerHTML = "SupremeCars"
+
+    title.appendChild(logo)
+    title.appendChild(pageName)    
+
+    miesto.appendChild(document.createElement("hr"))
+
+    // MENU
     let d1 = document.createElement("div")
-                d1.setAttribute("class", "row")
-                miesto.appendChild(d1)
+    d1.setAttribute("class", "row")
+    miesto.appendChild(d1)
 
-                let d2 = document.createElement("div")
-                d2.setAttribute("class", "col-md-6")
-                d2.setAttribute("style", "display: block;")
-                d1.appendChild(d2)
+    let d2 = document.createElement("div")
+    d2.setAttribute("class", "col-md-6")
+    d2.setAttribute("style", "display: block;")
+    d1.appendChild(d2)
 
-                let ul1 = document.createElement("ul")
-                ul1.setAttribute("class", "Menu -horizontal")
-                d2.appendChild(ul1)
-                
-                //Home
+    let ul1 = document.createElement("ul")
+    ul1.setAttribute("class", "Menu -horizontal")
+    d2.appendChild(ul1)
+    
+    //Home
 
-                let home = document.createElement("li")
-                let Ahome = document.createElement("a")
-                Ahome.setAttribute("href", "index.html")
-                // Ahome.setAttribute("class", "bg-info")
-            
-                var linkTextHome = document.createTextNode("Domov");
-                
-                //About
-                let about = document.createElement("li")
-                let Aabout = document.createElement("a")
-                Aabout.setAttribute("href", "about.html")
-                var linkTextAbout = document.createTextNode("O nás");
-                
-                
-                ul1.appendChild(home)
-                home.appendChild(Ahome)
-                Ahome.appendChild(linkTextHome)
+    let home = document.createElement("li")
+    let Ahome = document.createElement("a")
+    Ahome.setAttribute("href", "index.html")
+    let homeIcon = document.createElement("i")
+    homeIcon.classList.add("fa-home")
+    homeIcon.classList.add("fas")
+    homeIcon.style.marginRight = "5px"
+    var linkTextHome = document.createTextNode("Domov");
 
-                ul1.appendChild(about)
-                about.appendChild(Aabout)
-                Aabout.appendChild(linkTextAbout)
+    ul1.appendChild(home)
+    Ahome.appendChild(homeIcon)
+    home.appendChild(Ahome)
+    Ahome.appendChild(linkTextHome)
+    
+    //About
+    let about = document.createElement("li")
+    let Aabout = document.createElement("a")
+    Aabout.setAttribute("href", "about.html")
+    var linkTextAbout = document.createTextNode("O nás");                
 
-                //Gallery
+    ul1.appendChild(about)
+    about.appendChild(Aabout)
+    Aabout.appendChild(linkTextAbout)
 
-                let galery = document.createElement("li")
-                galery.setAttribute("class", "-hasSubmenu")
-                let Agalery = document.createElement("a")
-                Agalery.setAttribute("href", "#")
-                var linkTextGalery = document.createTextNode("Ponuka");
+    //Gallery
 
-                ul1.appendChild(galery)
-                galery.appendChild(Agalery)
-                Agalery.appendChild(linkTextGalery)
+    let galery = document.createElement("li")
+    galery.setAttribute("class", "-hasSubmenu")
+    let Agalery = document.createElement("a")
+    Agalery.setAttribute("href", "#")
+    var linkTextGalery = document.createTextNode("Ponuka");
 
-                let ul2 = document.createElement("ul")
-                galery.appendChild(ul2)
+    ul1.appendChild(galery)
+    galery.appendChild(Agalery)
+    Agalery.appendChild(linkTextGalery)
 
-                
-                // Tu zacinaju znacky a typy aut (2-3 vrstva menu)
+    let ul2 = document.createElement("ul")
+    galery.appendChild(ul2)
 
-                // Audi
+    
+    // Tu zacinaju znacky a typy aut (2-3 vrstva menu)
 
-                let lii = document.createElement("li")
-                lii.setAttribute("class", "-hasSubmenu")
-                
-                ul2.appendChild(lii)
+    // Audi
 
-                let aa = document.createElement("a")
-                aa.setAttribute("href", "#")
-                aa.classList.add("menuCarBrand")
-                var linkText = document.createTextNode("Audi");
+    let lii = document.createElement("li")
+    lii.setAttribute("class", "-hasSubmenu")
+    
+    ul2.appendChild(lii)
 
-                let carLogoAudi = document.createElement("img");
-                carLogoAudi.setAttribute("src", "./assets/cars-logo/AUDI-logo.png")
-                carLogoAudi.style.width = "5vh"
+    let aa = document.createElement("a")
+    aa.setAttribute("href", "#")
+    aa.classList.add("menuCarBrand")
+    var linkText = document.createTextNode("Audi");
 
-
-                lii.appendChild(aa)                  
-                aa.appendChild(linkText)
-                aa.appendChild(carLogoAudi)
+    let carLogoAudi = document.createElement("img");
+    carLogoAudi.setAttribute("src", "./assets/cars-logo/AUDI-logo.png")
+    carLogoAudi.style.width = "5vh"
 
 
-                let ul3A = document.createElement("ul")
-                
-                lii.appendChild(ul3A)
-                
-
-                let li1 = document.createElement("li")
-                li1.classList.add("noSubmenu")
-                let aa1 = document.createElement("a")
-                aa1.setAttribute("href", "A8L.html")
-                aa1.classList.add("menuCarBrand")
-                var linkTextLi1 = document.createTextNode("A8L");
-                ul3A.appendChild(li1)
-                li1.appendChild(aa1)                
-                aa1.appendChild(linkTextLi1)
-
-                let thumbnailA8l = document.createElement("img");
-                thumbnailA8l.setAttribute("src", "./assets/cars-thumbnails/a8l-thumbnail.png")
-                thumbnailA8l.style.width = "12vh"
-                aa1.appendChild(thumbnailA8l)
+    lii.appendChild(aa)                  
+    aa.appendChild(linkText)
+    aa.appendChild(carLogoAudi)
 
 
-                let li2 = document.createElement("li")
-                li2.classList.add("noSubmenu")
-                let aa2 = document.createElement("a")
-                aa2.setAttribute("href", "RS7.html")
-                aa2.classList.add("menuCarBrand")
-                var linkTextLi2 = document.createTextNode("RS 7 Sportback");
-                ul3A.appendChild(li2)
-                li2.appendChild(aa2)
-                aa2.appendChild(linkTextLi2)
+    let ul3A = document.createElement("ul")
+    
+    lii.appendChild(ul3A)
+    
 
-                let thumbnailRs7 = document.createElement("img");
-                thumbnailRs7.setAttribute("src", "./assets/cars-thumbnails/rs7sb-thumbnail.png")
-                thumbnailRs7.style.width = "12vh"
-                aa2.appendChild(thumbnailRs7)
+    let li1 = document.createElement("li")
+    li1.classList.add("noSubmenu")
+    let aa1 = document.createElement("a")
+    aa1.setAttribute("href", "A8L.html")
+    aa1.classList.add("menuCarBrand")
+    var linkTextLi1 = document.createTextNode("A8L");
+    ul3A.appendChild(li1)
+    li1.appendChild(aa1)                
+    aa1.appendChild(linkTextLi1)
 
-                let li3 = document.createElement("li")
-                li3.classList.add("noSubmenu") 
-                let aa3 = document.createElement("a")
-                aa3.setAttribute("href", "RSQ8.html")
-                aa3.classList.add("menuCarBrand")
-                var linkTextLi3 = document.createTextNode("RS Q8");
-                ul3A.appendChild(li3)
-                li3.appendChild(aa3)
-                aa3.appendChild(linkTextLi3)
-
-                let thumbnailRsq8 = document.createElement("img");
-                thumbnailRsq8.setAttribute("src", "./assets/cars-thumbnails/rsq8-thumbnail.png")
-                thumbnailRsq8.style.width = "12vh"
-                aa3.appendChild(thumbnailRsq8)
+    let thumbnailA8l = document.createElement("img");
+    thumbnailA8l.setAttribute("src", "./assets/cars-thumbnails/a8l-thumbnail.png")
+    thumbnailA8l.style.width = "12vh"
+    aa1.appendChild(thumbnailA8l)
 
 
-                // BMW
-            
-                let liiB = document.createElement("li")
-                liiB.setAttribute("class", "-hasSubmenu")
-                
-                ul2.appendChild(liiB)
+    let li2 = document.createElement("li")
+    li2.classList.add("noSubmenu")
+    let aa2 = document.createElement("a")
+    aa2.setAttribute("href", "RS7.html")
+    aa2.classList.add("menuCarBrand")
+    var linkTextLi2 = document.createTextNode("RS 7 Sportback");
+    ul3A.appendChild(li2)
+    li2.appendChild(aa2)
+    aa2.appendChild(linkTextLi2)
 
-                let aaB = document.createElement("a")
-                aaB.setAttribute("href", "#")
-                aaB.classList.add("menuCarBrand")
-                var linkTextB = document.createTextNode("BMW");
+    let thumbnailRs7 = document.createElement("img");
+    thumbnailRs7.setAttribute("src", "./assets/cars-thumbnails/rs7sb-thumbnail.png")
+    thumbnailRs7.style.width = "12vh"
+    aa2.appendChild(thumbnailRs7)
 
-                let carLogoBmw = document.createElement("img");
-                carLogoBmw.setAttribute("src", "./assets/cars-logo/BMW-logo.png")
-                carLogoBmw.style.width = "4vh"
+    let li3 = document.createElement("li")
+    li3.classList.add("noSubmenu") 
+    let aa3 = document.createElement("a")
+    aa3.setAttribute("href", "RSQ8.html")
+    aa3.classList.add("menuCarBrand")
+    var linkTextLi3 = document.createTextNode("RS Q8");
+    ul3A.appendChild(li3)
+    li3.appendChild(aa3)
+    aa3.appendChild(linkTextLi3)
 
-
-                liiB.appendChild(aaB)
-                aaB.appendChild(linkTextB)
-                aaB.appendChild(carLogoBmw)
-
-                let ul3B = document.createElement("ul")
-                
-                liiB.appendChild(ul3B)
-
-                let li1B = document.createElement("li")
-                li1B.classList.add("noSubmenu")
-                let aa1B = document.createElement("a")
-                aa1B.setAttribute("href", "850i.html")
-                aa1B.classList.add("menuCarBrand")
-                var linkTextLi1B = document.createTextNode("850i Cabrio");
-                ul3B.appendChild(li1B)
-                li1B.appendChild(aa1B)
-                aa1B.appendChild(linkTextLi1B)
-
-                let thumbnail850i = document.createElement("img");
-                thumbnail850i.setAttribute("src", "./assets/cars-thumbnails/bmw8-thumbnail.png")
-                thumbnail850i.style.width = "12vh"
-                aa1B.appendChild(thumbnail850i)
+    let thumbnailRsq8 = document.createElement("img");
+    thumbnailRsq8.setAttribute("src", "./assets/cars-thumbnails/rsq8-thumbnail.png")
+    thumbnailRsq8.style.width = "12vh"
+    aa3.appendChild(thumbnailRsq8)
 
 
-                let li2B = document.createElement("li")
-                li2B.classList.add("noSubmenu")
-                let aa2B = document.createElement("a")
-                aa2B.setAttribute("href", "M5.html")
-                aa2B.classList.add("menuCarBrand")
-                var linkTextLi2B = document.createTextNode("M5 Competition");
-                ul3B.appendChild(li2B)
-                li2B.appendChild(aa2B)
-                aa2B.appendChild(linkTextLi2B)
+    // BMW
 
-                let thumbnailM5 = document.createElement("img");
-                thumbnailM5.setAttribute("src", "./assets/cars-thumbnails/bmwm5-thumbnail.png")
-                thumbnailM5.style.width = "12vh"
-                aa2B.appendChild(thumbnailM5)
+    let liiB = document.createElement("li")
+    liiB.setAttribute("class", "-hasSubmenu")
+    
+    ul2.appendChild(liiB)
 
-                let li3B = document.createElement("li") 
-                li3B.classList.add("noSubmenu")
-                let aa3B = document.createElement("a")
-                aa3B.setAttribute("href", "X6M.html")
-                aa3B.classList.add("menuCarBrand")
-                var linkTextLi3B = document.createTextNode("X6 M");
-                ul3B.appendChild(li3B)
-                li3B.appendChild(aa3B)
-                aa3B.appendChild(linkTextLi3B)
+    let aaB = document.createElement("a")
+    aaB.setAttribute("href", "#")
+    aaB.classList.add("menuCarBrand")
+    var linkTextB = document.createTextNode("BMW");
 
-                let thumbnailX6 = document.createElement("img");
-                thumbnailX6.setAttribute("src", "./assets/cars-thumbnails/bmwx6m-thumbnail.png")
-                thumbnailX6.style.width = "10.5vh"
-                aa3B.appendChild(thumbnailX6)
-                
+    let carLogoBmw = document.createElement("img");
+    carLogoBmw.setAttribute("src", "./assets/cars-logo/BMW-logo.png")
+    carLogoBmw.style.width = "4vh"
 
-                // Mercedes Benz
-                
-                let liiM = document.createElement("li")
-                liiM.setAttribute("class", "-hasSubmenu")
-                
-                ul2.appendChild(liiM)
 
-                let aaM = document.createElement("a")
-                aaM.setAttribute("href", "#")
-                aaM.classList.add("menuCarBrand")
-                var linkTextM = document.createTextNode("Mercedes Benz");
+    liiB.appendChild(aaB)
+    aaB.appendChild(linkTextB)
+    aaB.appendChild(carLogoBmw)
 
-                let carLogoMb = document.createElement("img");
-                carLogoMb.setAttribute("src", "./assets/cars-logo/MB-logo.png")
-                carLogoMb.style.width = "4vh"
+    let ul3B = document.createElement("ul")
+    
+    liiB.appendChild(ul3B)
 
-                liiM.appendChild(aaM)
-                aaM.appendChild(linkTextM)
-                aaM.appendChild(carLogoMb)
+    let li1B = document.createElement("li")
+    li1B.classList.add("noSubmenu")
+    let aa1B = document.createElement("a")
+    aa1B.setAttribute("href", "850i.html")
+    aa1B.classList.add("menuCarBrand")
+    var linkTextLi1B = document.createTextNode("850i Cabrio");
+    ul3B.appendChild(li1B)
+    li1B.appendChild(aa1B)
+    aa1B.appendChild(linkTextLi1B)
 
-                let ul3M = document.createElement("ul")
-                
-                liiM.appendChild(ul3M)
+    let thumbnail850i = document.createElement("img");
+    thumbnail850i.setAttribute("src", "./assets/cars-thumbnails/bmw8-thumbnail.png")
+    thumbnail850i.style.width = "12vh"
+    aa1B.appendChild(thumbnail850i)
 
-                let li1M = document.createElement("li")
-                li1M.classList.add("noSubmenu")
-                let aa1M = document.createElement("a")
-                aa1M.setAttribute("href", "GLS63.html")
-                aa1M.classList.add("menuCarBrand")
-                var linkTextLi1M = document.createTextNode("GLS 63 4MATIC+");
-                ul3M.appendChild(li1M)
-                li1M.appendChild(aa1M)
-                aa1M.appendChild(linkTextLi1M)
 
-                let thumbnailGLS = document.createElement("img");
-                thumbnailGLS.setAttribute("src", "./assets/cars-thumbnails/gls-thumbnail.png")
-                thumbnailGLS.style.width = "10.5vh"
-                aa1M.appendChild(thumbnailGLS)
+    let li2B = document.createElement("li")
+    li2B.classList.add("noSubmenu")
+    let aa2B = document.createElement("a")
+    aa2B.setAttribute("href", "M5.html")
+    aa2B.classList.add("menuCarBrand")
+    var linkTextLi2B = document.createTextNode("M5 Competition");
+    ul3B.appendChild(li2B)
+    li2B.appendChild(aa2B)
+    aa2B.appendChild(linkTextLi2B)
 
-                let li2M = document.createElement("li")
-                li2M.classList.add("noSubmenu")
-                let aa2M = document.createElement("a")
-                aa2M.setAttribute("href", "GT63S.html")
-                aa2M.classList.add("menuCarBrand")
-                var linkTextLi2M = document.createTextNode("GT 63 S 4MATIC+");
-                ul3M.appendChild(li2M)
-                li2M.appendChild(aa2M)
-                aa2M.appendChild(linkTextLi2M)
+    let thumbnailM5 = document.createElement("img");
+    thumbnailM5.setAttribute("src", "./assets/cars-thumbnails/bmwm5-thumbnail.png")
+    thumbnailM5.style.width = "12vh"
+    aa2B.appendChild(thumbnailM5)
 
-                let thumbnailGT = document.createElement("img");
-                thumbnailGT.setAttribute("src", "./assets/cars-thumbnails/gt63s-thumbnail.png")
-                thumbnailGT.style.width = "10.5vh"
-                aa2M.appendChild(thumbnailGT)
+    let li3B = document.createElement("li") 
+    li3B.classList.add("noSubmenu")
+    let aa3B = document.createElement("a")
+    aa3B.setAttribute("href", "X6M.html")
+    aa3B.classList.add("menuCarBrand")
+    var linkTextLi3B = document.createTextNode("X6 M");
+    ul3B.appendChild(li3B)
+    li3B.appendChild(aa3B)
+    aa3B.appendChild(linkTextLi3B)
 
-                let li3M = document.createElement("li")
-                li3M.classList.add("noSubmenu") 
-                let aa3M = document.createElement("a")
-                aa3M.setAttribute("href", "S500.html")
-                aa3M.classList.add("menuCarBrand")
-                var linkTextLi3M = document.createTextNode("S 500 4MATIC");
-                ul3M.appendChild(li3M)
-                li3M.appendChild(aa3M)
-                aa3M.appendChild(linkTextLi3M)
+    let thumbnailX6 = document.createElement("img");
+    thumbnailX6.setAttribute("src", "./assets/cars-thumbnails/bmwx6m-thumbnail.png")
+    thumbnailX6.style.width = "10.5vh"
+    aa3B.appendChild(thumbnailX6)
+    
 
-                let thumbnailS = document.createElement("img");
-                thumbnailS.setAttribute("src", "./assets/cars-thumbnails/s-thumbnail.png")
-                thumbnailS.style.width = "10.5vh"
-                aa3M.appendChild(thumbnailS)
-               
+    // Mercedes Benz
+    
+    let liiM = document.createElement("li")
+    liiM.setAttribute("class", "-hasSubmenu")
+    
+    ul2.appendChild(liiM)
 
-                // Porsche
-                
-                let liiP = document.createElement("li")
-                liiP.setAttribute("class", "-hasSubmenu")
-                
-                ul2.appendChild(liiP)
+    let aaM = document.createElement("a")
+    aaM.setAttribute("href", "#")
+    aaM.classList.add("menuCarBrand")
+    var linkTextM = document.createTextNode("Mercedes Benz");
 
-                let aaP = document.createElement("a")
-                aaP.setAttribute("href", "#")
-                aaP.classList.add("menuCarBrand")
-                var linkTextP = document.createTextNode("Porsche");
+    let carLogoMb = document.createElement("img");
+    carLogoMb.setAttribute("src", "./assets/cars-logo/MB-logo.png")
+    carLogoMb.style.width = "4vh"
 
-                let carLogoPorsche = document.createElement("img");
-                carLogoPorsche.setAttribute("src", "./assets/cars-logo/PORSCHE-logo.png")
-                carLogoPorsche.style.width = "3.4vh"
+    liiM.appendChild(aaM)
+    aaM.appendChild(linkTextM)
+    aaM.appendChild(carLogoMb)
 
-                liiP.appendChild(aaP)
-                aaP.appendChild(linkTextP)
-                aaP.appendChild(carLogoPorsche)
+    let ul3M = document.createElement("ul")
+    
+    liiM.appendChild(ul3M)
 
-                let ul3P = document.createElement("ul")
-                
-                liiP.appendChild(ul3P)
+    let li1M = document.createElement("li")
+    li1M.classList.add("noSubmenu")
+    let aa1M = document.createElement("a")
+    aa1M.setAttribute("href", "GLS63.html")
+    aa1M.classList.add("menuCarBrand")
+    var linkTextLi1M = document.createTextNode("GLS 63 4MATIC+");
+    ul3M.appendChild(li1M)
+    li1M.appendChild(aa1M)
+    aa1M.appendChild(linkTextLi1M)
 
-                let li1P = document.createElement("li")
-                li1P.classList.add("noSubmenu")
-                let aa1P = document.createElement("a")
-                aa1P.setAttribute("href", "911TurboS.html")
-                aa1P.classList.add("menuCarBrand")
-                var linkTextLi1P = document.createTextNode("911 Turbo S");
-                ul3P.appendChild(li1P)
-                li1P.appendChild(aa1P)
-                aa1P.appendChild(linkTextLi1P)
+    let thumbnailGLS = document.createElement("img");
+    thumbnailGLS.setAttribute("src", "./assets/cars-thumbnails/gls-thumbnail.png")
+    thumbnailGLS.style.width = "10.5vh"
+    aa1M.appendChild(thumbnailGLS)
 
-                let thumbnail911S = document.createElement("img");
-                thumbnail911S.setAttribute("src", "./assets/cars-thumbnails/911ts-thumbnail.png")
-                thumbnail911S.style.width = "10.5vh"
-                aa1P.appendChild(thumbnail911S)
+    let li2M = document.createElement("li")
+    li2M.classList.add("noSubmenu")
+    let aa2M = document.createElement("a")
+    aa2M.setAttribute("href", "GT63S.html")
+    aa2M.classList.add("menuCarBrand")
+    var linkTextLi2M = document.createTextNode("GT 63 S 4MATIC+");
+    ul3M.appendChild(li2M)
+    li2M.appendChild(aa2M)
+    aa2M.appendChild(linkTextLi2M)
 
-                let li2P = document.createElement("li")
-                li2P.classList.add("noSubmenu")
-                let aa2P = document.createElement("a")
-                aa2P.setAttribute("href", "CayenneTurbo.html")
-                aa2P.classList.add("menuCarBrand")
-                var linkTextLi2P = document.createTextNode("Cayenne Turbo Coupé");
-                ul3P.appendChild(li2P)
-                li2P.appendChild(aa2P)
-                aa2P.appendChild(linkTextLi2P)
+    let thumbnailGT = document.createElement("img");
+    thumbnailGT.setAttribute("src", "./assets/cars-thumbnails/gt63s-thumbnail.png")
+    thumbnailGT.style.width = "10.5vh"
+    aa2M.appendChild(thumbnailGT)
 
-                let thumbnailCayS = document.createElement("img");
-                thumbnailCayS.setAttribute("src", "./assets/cars-thumbnails/cayenneS-thumbnail.png")
-                thumbnailCayS.style.width = "10.5vh"
-                aa2P.appendChild(thumbnailCayS)
+    let li3M = document.createElement("li")
+    li3M.classList.add("noSubmenu") 
+    let aa3M = document.createElement("a")
+    aa3M.setAttribute("href", "S500.html")
+    aa3M.classList.add("menuCarBrand")
+    var linkTextLi3M = document.createTextNode("S 500 4MATIC");
+    ul3M.appendChild(li3M)
+    li3M.appendChild(aa3M)
+    aa3M.appendChild(linkTextLi3M)
+
+    let thumbnailS = document.createElement("img");
+    thumbnailS.setAttribute("src", "./assets/cars-thumbnails/s-thumbnail.png")
+    thumbnailS.style.width = "10.5vh"
+    aa3M.appendChild(thumbnailS)
+    
+
+    // Porsche
+    
+    let liiP = document.createElement("li")
+    liiP.setAttribute("class", "-hasSubmenu")
+    
+    ul2.appendChild(liiP)
+
+    let aaP = document.createElement("a")
+    aaP.setAttribute("href", "#")
+    aaP.classList.add("menuCarBrand")
+    var linkTextP = document.createTextNode("Porsche");
+
+    let carLogoPorsche = document.createElement("img");
+    carLogoPorsche.setAttribute("src", "./assets/cars-logo/PORSCHE-logo.png")
+    carLogoPorsche.style.width = "3.4vh"
+
+    liiP.appendChild(aaP)
+    aaP.appendChild(linkTextP)
+    aaP.appendChild(carLogoPorsche)
+
+    let ul3P = document.createElement("ul")
+    
+    liiP.appendChild(ul3P)
+
+    let li1P = document.createElement("li")
+    li1P.classList.add("noSubmenu")
+    let aa1P = document.createElement("a")
+    aa1P.setAttribute("href", "911TurboS.html")
+    aa1P.classList.add("menuCarBrand")
+    var linkTextLi1P = document.createTextNode("911 Turbo S");
+    ul3P.appendChild(li1P)
+    li1P.appendChild(aa1P)
+    aa1P.appendChild(linkTextLi1P)
+
+    let thumbnail911S = document.createElement("img");
+    thumbnail911S.setAttribute("src", "./assets/cars-thumbnails/911ts-thumbnail.png")
+    thumbnail911S.style.width = "10.5vh"
+    aa1P.appendChild(thumbnail911S)
+
+    let li2P = document.createElement("li")
+    li2P.classList.add("noSubmenu")
+    let aa2P = document.createElement("a")
+    aa2P.setAttribute("href", "CayenneTurbo.html")
+    aa2P.classList.add("menuCarBrand")
+    var linkTextLi2P = document.createTextNode("Cayenne Turbo Coupé");
+    ul3P.appendChild(li2P)
+    li2P.appendChild(aa2P)
+    aa2P.appendChild(linkTextLi2P)
+
+    let thumbnailCayS = document.createElement("img");
+    thumbnailCayS.setAttribute("src", "./assets/cars-thumbnails/cayenneS-thumbnail.png")
+    thumbnailCayS.style.width = "10.5vh"
+    aa2P.appendChild(thumbnailCayS)
 
     //Contact
     let contact = document.createElement("li")
@@ -571,6 +596,38 @@ document.addEventListener("DOMContentLoaded", () => {
     Ahome.addEventListener('click', store_breadcrumbs());
 
     breadcrumbs();
+
+
+
+    // Modal
+    let modal1 = document.createElement("div")
+    modal1.classList.add("modal","fade")
+    modal1.id = "modal"
+    modal1.setAttribute("tabinder","-1")
+    modal1.setAttribute("role","dialog")
+
+    let modal2 = document.createElement("div")
+    modal2.classList.add("modal-dialog")
+    modal2.setAttribute("role","document")
+    modal1.appendChild(modal2)
+
+    let modal3 = document.createElement("div")
+    modal3.classList.add("modal-content")
+    modal2.appendChild(modal3)    
+    
+    let modal4 = document.createElement("div")
+    modal4.classList.add("modal-body")
+    modal3.appendChild(modal4)
+
+    let p = document.createElement("p")
+    p.id = "modal_text"
+    modal4.appendChild(p)
+
+    let modal5 = document.createElement("div")
+    modal5.classList.add("modal-footer")
+    modal3.appendChild(modal5)
+    
+    document.body.append(modal1)
 })
 
 //Breadcrumbs functions
@@ -650,4 +707,3 @@ function breadcrumbs() {
     }
     localStorage.setItem("kys", local);
 }
-
