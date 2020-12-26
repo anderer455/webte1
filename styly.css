@@ -1,5 +1,6 @@
 html,body {
     width: 100%;
+    background-color: #ffffff
 }
 
 .-hasSubmenu{
@@ -71,10 +72,6 @@ html,body {
     align-items: center;
     height: 50px !important;
 }
-
-body{
-    background-color: #ffffff
-}
 .obrazky{
     height: 300px;
     width: 300px;
@@ -93,6 +90,8 @@ body{
     font-family: 'Play';
     -webkit-box-shadow: 0px 4px 20px 0px #000000; 
     box-shadow: 0px 4px 20px 0px #000000;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 .carDescription {
@@ -263,6 +262,9 @@ header hr {
 
 #about h2 {
     text-align:center;
+    color: whitesmoke;
+    margin: 3rem;
+    margin-bottom: 2rem;    
 }
 
 .-visible {
@@ -301,6 +303,7 @@ header hr {
 
 .carParametersItemDetail_Number {
     font-size: 4rem;
+    
 }
 
 .carParametersItemDetail_Unit {
@@ -341,6 +344,12 @@ header hr {
         padding-top: 50px !important;
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .contacts-container {
+        padding: 0px !important;
+        padding-top: 50px !important;
+        grid-template-columns: auto !important;
+    }
     .-horizontal {
         flex-direction: column;
         height: 100% !important;
@@ -369,13 +378,24 @@ header hr {
     .row table {
         font-size: 12px;
     }
-    html,body {
-        width: 100%;
+    #social_networks {
+        flex-direction: column;
+    }
+    .social_networks_item {
+        justify-content: center;
+    }
+    #brands {
+        display: contents !important;
+    }
+    #brands img {
+        margin-bottom: 20px;
     }
 }
 
 @media only screen and (min-width: 995px) {
     .grid-container  { grid-template-columns: repeat(2, 1fr); }
+
+    .contacts-container { grid-template-columns: auto auto; }
     
     .-horizontal {
         flex-direction: row;
@@ -383,7 +403,7 @@ header hr {
 }
 
 @media only screen and (min-width: 1200px) {
-    .grid-container  { grid-template-columns: repeat(3, 1fr); }
+    .grid-container  { grid-template-columns: repeat(3, 1fr); }    
 }
 
 .row {
@@ -418,7 +438,7 @@ header hr {
     color: black !important;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .grid-item {
@@ -493,7 +513,10 @@ header hr {
     display: flex;
     justify-content: space-evenly;
     font-family: 'Play';
-    width: 85%;
+    width: 100%;
+    background-color: darkgray;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 #social_networks i {
@@ -503,6 +526,12 @@ header hr {
 
 .social_networks_item {
     display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.social_networks_item p {
+    margin-bottom: 0px;
 }
 
 #mapContainer {
@@ -515,4 +544,82 @@ header hr {
     height: 50px;
     background-color: rgb(11, 127, 135);
     display: flex;    
+}
+
+.contacts-container {
+    display: grid;
+    padding-bottom: 50px;    
+    grid-row-gap: 50px;
+    width: 99%;
+    grid-template-columns: auto auto;
+    justify-items: center;
+}
+
+.contact {
+    background-color: #757575d3;
+    border: 5px solid rgba(0, 0, 0, 0.8);
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: auto;
+    width: 275px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    box-shadow: 0px 5px 30px 0px #ffffff;
+    border-radius: 10px;
+}
+
+.contact p {
+    margin: 5px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: black;
+}
+
+.personal-info i {
+    margin-top: 2px;
+}
+
+.personal-info {
+    margin: 10px;
+}
+
+#mail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container hr {
+    width: 90%;
+    border-top: 1px solid rgba(0, 0, 0, 0.74);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media print {
+    #about h2 {
+        color: black;
+        margin: 0rem;
+    }
+    .container {
+        margin: 0;
+    }
+    header {
+        margin-top: 0px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-item {
+        border: 0px;
+    }
+    .container-fluid h1 {
+        margin: 0px;
+    }
+    .carDescription p {
+        padding: 0px;
+    }
 }

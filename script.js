@@ -585,7 +585,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
             else
-                document.getElementById("modal_text").innerHTML = "Zadali ste zlá formát! Povolené formáty sú DD.MM. alebo meno."
+                document.getElementById("modal_text").innerHTML = "Zadali ste zlý formát! Povolené formáty sú DD.MM. alebo meno."
         }
         else {
             document.getElementById("modal_text").innerHTML = "Musíte zatať dátum v tvare DD.MM. alebo meno ktoré chcete vyhľadať."
@@ -596,8 +596,6 @@ document.addEventListener("DOMContentLoaded", () => {
     Ahome.addEventListener('click', store_breadcrumbs());
 
     breadcrumbs();
-
-
 
     // Modal
     let modal1 = document.createElement("div")
@@ -627,7 +625,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal5.classList.add("modal-footer")
     modal3.appendChild(modal5)
     
-    document.body.append(modal1)
+    document.body.append(modal1)   
 })
 
 //Breadcrumbs functions
