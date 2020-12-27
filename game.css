@@ -1,0 +1,54 @@
+#game_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container-fluid {
+    background-color: #F0F0F0;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    width: 750px;
+    border: 2px solid;
+    border-radius: 50%;
+    margin-top: 25px;
+    position: absolute;
+}
+
+.time {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 8rem;
+    text-shadow: 0px 16px 9px rgba(150, 150, 150, 1);
+}
+
+#stopwatch {
+    display: flex;
+    justify-content: center;
+}
+
+.container-fluid p {
+    margin: 0px;
+}
+
+.container-fluid h1{
+    margin-bottom: 0 !important;
+    margin: 0px;
+}
+
+#title_sec_line {
+    font-size: 1.6rem;
+}
+
+#game_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
