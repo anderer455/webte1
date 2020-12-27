@@ -364,6 +364,16 @@ document.addEventListener("DOMContentLoaded", () => {
     contact.appendChild(Acontact)
     Acontact.appendChild(linkTextContact)
 
+    // Game
+    let game = document.createElement("li")
+    let Ggame = document.createElement("a")
+    Ggame.setAttribute("href", "game.html")
+    var linkTextGame = document.createTextNode("Hra");                
+
+    ul1.appendChild(game)
+    game.appendChild(Ggame)
+    Ggame.appendChild(linkTextGame)
+
     // Search
 
     let d2S = document.createElement("div");
@@ -672,6 +682,8 @@ function breadcrumbs() {
             a.innerHTML = "O nás";
         else if (local[i].includes("contact"))
             a.innerHTML = "Kontakt";
+        else if (local[i].includes("game"))
+            a.innerHTML = "Hra";
         else if (local[i].includes("A8L"))
             a.innerHTML = "A8L";
         else if (local[i].includes("RS7"))
