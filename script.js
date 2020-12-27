@@ -628,6 +628,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.append(modal1)   
 })
 
+
+
 //Breadcrumbs functions
 
 function store_breadcrumbs() {

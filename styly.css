@@ -83,7 +83,8 @@ html,body {
     flex-direction: column;
     width: 100%;
     height: auto;
-    background: linear-gradient(180deg, rgba(69,69,69,1) 0%, rgba(122,122,122,1) 50%, rgba(215,215,215,1) 100%);
+    /* background: linear-gradient(180deg, rgba(69,69,69,1) 0%, rgba(122,122,122,1) 50%, rgba(215,215,215,1) 100%); */
+    background: linear-gradient(180deg, rgb(31, 31, 31) 0%, rgb(100, 100, 100) 50%, rgba(215,215,215,1) 100%);
     border-radius: 20px;
     margin: 50px;
     color: black;
@@ -450,16 +451,7 @@ header hr {
     height: auto;
     text-align: center;
     transition: all .2s ease-in-out;
-}
-
-.full-bg { 
-    background: url(./assets/cars-images/850i/8-front.jpg) no-repeat center center; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 250px;
-    
+    display: grid;
 }
 
 .grid-item:hover {
@@ -487,12 +479,17 @@ header hr {
     content: '';
     display: block;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: #000;
     transition: width .3s;
 }
 
 .grid-item:hover .underline::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.container-fluid:hover .underline::after {
     width: 100%;
     transition: width .3s;
 }
