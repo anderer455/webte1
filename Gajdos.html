@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Play" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/konva@7.2.2/konva.min.js"></script>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="styly.css">
+    <script src="menu.js"></script>
+    <script src="script.js"></script>
+    <script src="Gajdos.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e73d803768.js" crossorigin="anonymous"></script>
+    <style>
+    
+        h1 {
+          text-align: center;
+          max-width: 578px;
+          max-height: 530px;
+          margin: auto;
+        }
+        .placeholder{
+            justify-content: center;
+            margin: auto;
+        }
+    
+        #container {
+          max-width: 578px;
+          max-height: 530px;
+          margin: auto;
+          padding: 0;
+          overflow: hidden;
+          background-color: #f0f0f0;
+        }
+    
+        .konvajs-content {
+          max-width: 578px;
+          max-height: 530px;
+          background-color: white;
+          border: solid 2px black;
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+          border-radius: 5px 5px;
+        }
+    
+        ul#win li {
+          display: inline;
+        }
+      </style>
+</head>
+
+<body>
+    <header style="margin-top: 5px;" id="header">
+        <div id="DDD"></div>
+    </header>
+    <div class="placeholder">
+        <H1 style="border-bottom: solid 6px black; border-radius:  10px 10px; max-width: 578px; max-height: 530px;">Postav
+            košík s ovocím</H1>
+        <ul style="list-style-type: none; margin: auto;" id="win">
+            <li class="fw-bold" id="time">Čas: 0</li>
+            <li><button class="btn btn-secondary" id="demo" onclick="demo()">Demo</button></li>
+        </ul>
+    </div>
+    <div id="container"></div>
+    <div>Filip Michal Gajdoš <i class="far fa-copyright"></i></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
