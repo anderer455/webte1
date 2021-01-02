@@ -42,8 +42,6 @@ function start() {
 
 function stop() { clearInterval(timerInterval); }
 
-
-
 // let width = window.innerWidth;
 let height = window.innerHeight;
 const rozptyl = 40;
@@ -65,9 +63,6 @@ function loadImages(sources, callback) {
         };
         images[src].src = assetDir + sources[src];
     }
-    };
-    images[src].src = assetDir + sources[src];
-}
 }
 function positionController(part, outline) {
     let a = part;
@@ -81,7 +76,6 @@ function positionController(part, outline) {
         return false;
     }
 }
-
 
 function drawBackground(background, carImage) {
 let context = background.getContext();
@@ -186,10 +180,8 @@ for (let key in carParts) {
         else if (demoOnOff == 1)
             demoOf();        
     });
-    /*
-        * check if part is in the right spot and
-        * snap into place if it is
-        */
+    
+    // check position of img
     part.on('dragend', function () {
         let outline = outlines[privKey + '_black'];
         if (!part.inRightPlace && positionController(part, outline)) {
@@ -203,6 +195,7 @@ for (let key in carParts) {
         if (++score >= 7) {
             drawBackground(background, images.car);
             stop();
+            document.getElementById("fail").style.visibility = "visible"
         }
 
         // disabling drag&drop
@@ -211,12 +204,11 @@ for (let key in carParts) {
         }, 50);
         }
     });
-    // make part glow on mouseover
+
     part.on('mouseover', function () {
         partLayer.draw();
         document.body.style.cursor = 'pointer';
     });
-    // return part on mouseout
     part.on('mouseout', function () {
         part.image(images[privKey]);
         partLayer.draw();
@@ -234,7 +226,6 @@ for (let key in carParts) {
 
 // create carparts outlines
 for (let key in outlines) {
-    // anonymous function to induce scope
     (function () {
     let imageObj = images[key];
     let out = outlines[key];

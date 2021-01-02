@@ -1,5 +1,5 @@
 
-var plz_work = [];
+let plz_work = [];
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
     miesto.append(title)
 
     let logo = document.createElement("img")
-    logo.setAttribute("src","assets/carlogo.png")
+    logo.setAttribute("src", "assets/carlogo.png")
     logo.style.width = "132px"
-    
+
     let pageName = document.createElement("h1")
     pageName.innerHTML = "SupremeCars"
 
     title.appendChild(logo)
-    title.appendChild(pageName)    
+    title.appendChild(pageName)
 
     miesto.appendChild(document.createElement("hr"))
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let ul1 = document.createElement("ul")
     ul1.setAttribute("class", "Menu -horizontal")
     d2.appendChild(ul1)
-    
+
     //Home
 
     let home = document.createElement("li")
@@ -49,30 +49,30 @@ document.addEventListener("DOMContentLoaded", () => {
     homeIcon.classList.add("fa-home")
     homeIcon.classList.add("fas")
     homeIcon.style.marginRight = "5px"
-    var linkTextHome = document.createTextNode("Domov");
+    let linkTextHome = document.createTextNode("Domov");
 
     ul1.appendChild(home)
     Ahome.appendChild(homeIcon)
     home.appendChild(Ahome)
     Ahome.appendChild(linkTextHome)
-    
+
     //About
     let about = document.createElement("li")
     let Aabout = document.createElement("a")
     Aabout.setAttribute("href", "about.html")
-    var linkTextAbout = document.createTextNode("O nás");                
+    let linkTextAbout = document.createTextNode("O nás");
 
     ul1.appendChild(about)
     about.appendChild(Aabout)
     Aabout.appendChild(linkTextAbout)
 
-    //Gallery
+    //Ponuka
 
     let galery = document.createElement("li")
     galery.setAttribute("class", "-hasSubmenu")
     let Agalery = document.createElement("a")
     Agalery.setAttribute("href", "#")
-    var linkTextGalery = document.createTextNode("Ponuka");
+    let linkTextGalery = document.createTextNode("Ponuka");
 
     ul1.appendChild(galery)
     galery.appendChild(Agalery)
@@ -81,44 +81,44 @@ document.addEventListener("DOMContentLoaded", () => {
     let ul2 = document.createElement("ul")
     galery.appendChild(ul2)
 
-    
+
     // Tu zacinaju znacky a typy aut (2-3 vrstva menu)
 
     // Audi
 
     let lii = document.createElement("li")
     lii.setAttribute("class", "-hasSubmenu")
-    
+
     ul2.appendChild(lii)
 
     let aa = document.createElement("a")
     aa.setAttribute("href", "#")
     aa.classList.add("menuCarBrand")
-    var linkText = document.createTextNode("Audi");
+    let linkText = document.createTextNode("Audi");
 
     let carLogoAudi = document.createElement("img");
     carLogoAudi.setAttribute("src", "./assets/cars-logo/AUDI-logo.png")
     carLogoAudi.style.width = "5vh"
 
 
-    lii.appendChild(aa)                  
+    lii.appendChild(aa)
     aa.appendChild(linkText)
     aa.appendChild(carLogoAudi)
 
 
     let ul3A = document.createElement("ul")
-    
+
     lii.appendChild(ul3A)
-    
+
 
     let li1 = document.createElement("li")
     li1.classList.add("noSubmenu")
     let aa1 = document.createElement("a")
     aa1.setAttribute("href", "A8L.html")
     aa1.classList.add("menuCarBrand")
-    var linkTextLi1 = document.createTextNode("A8L");
+    let linkTextLi1 = document.createTextNode("A8L");
     ul3A.appendChild(li1)
-    li1.appendChild(aa1)                
+    li1.appendChild(aa1)
     aa1.appendChild(linkTextLi1)
 
     let thumbnailA8l = document.createElement("img");
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let aa2 = document.createElement("a")
     aa2.setAttribute("href", "RS7.html")
     aa2.classList.add("menuCarBrand")
-    var linkTextLi2 = document.createTextNode("RS 7 Sportback");
+    let linkTextLi2 = document.createTextNode("RS 7 Sportback");
     ul3A.appendChild(li2)
     li2.appendChild(aa2)
     aa2.appendChild(linkTextLi2)
@@ -143,11 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
     aa2.appendChild(thumbnailRs7)
 
     let li3 = document.createElement("li")
-    li3.classList.add("noSubmenu") 
+    li3.classList.add("noSubmenu")
     let aa3 = document.createElement("a")
     aa3.setAttribute("href", "RSQ8.html")
     aa3.classList.add("menuCarBrand")
-    var linkTextLi3 = document.createTextNode("RS Q8");
+    let linkTextLi3 = document.createTextNode("RS Q8");
     ul3A.appendChild(li3)
     li3.appendChild(aa3)
     aa3.appendChild(linkTextLi3)
@@ -162,13 +162,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let liiB = document.createElement("li")
     liiB.setAttribute("class", "-hasSubmenu")
-    
+
     ul2.appendChild(liiB)
 
     let aaB = document.createElement("a")
     aaB.setAttribute("href", "#")
     aaB.classList.add("menuCarBrand")
-    var linkTextB = document.createTextNode("BMW");
+    let linkTextB = document.createTextNode("BMW");
 
     let carLogoBmw = document.createElement("img");
     carLogoBmw.setAttribute("src", "./assets/cars-logo/BMW-logo.png")
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aaB.appendChild(carLogoBmw)
 
     let ul3B = document.createElement("ul")
-    
+
     liiB.appendChild(ul3B)
 
     let li1B = document.createElement("li")
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let aa1B = document.createElement("a")
     aa1B.setAttribute("href", "850i.html")
     aa1B.classList.add("menuCarBrand")
-    var linkTextLi1B = document.createTextNode("850i Cabrio");
+    let linkTextLi1B = document.createTextNode("850i Cabrio");
     ul3B.appendChild(li1B)
     li1B.appendChild(aa1B)
     aa1B.appendChild(linkTextLi1B)
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let aa2B = document.createElement("a")
     aa2B.setAttribute("href", "M5.html")
     aa2B.classList.add("menuCarBrand")
-    var linkTextLi2B = document.createTextNode("M5 Competition");
+    let linkTextLi2B = document.createTextNode("M5 Competition");
     ul3B.appendChild(li2B)
     li2B.appendChild(aa2B)
     aa2B.appendChild(linkTextLi2B)
@@ -214,12 +214,12 @@ document.addEventListener("DOMContentLoaded", () => {
     thumbnailM5.style.width = "12vh"
     aa2B.appendChild(thumbnailM5)
 
-    let li3B = document.createElement("li") 
+    let li3B = document.createElement("li")
     li3B.classList.add("noSubmenu")
     let aa3B = document.createElement("a")
     aa3B.setAttribute("href", "X6M.html")
     aa3B.classList.add("menuCarBrand")
-    var linkTextLi3B = document.createTextNode("X6 M");
+    let linkTextLi3B = document.createTextNode("X6 M");
     ul3B.appendChild(li3B)
     li3B.appendChild(aa3B)
     aa3B.appendChild(linkTextLi3B)
@@ -228,19 +228,19 @@ document.addEventListener("DOMContentLoaded", () => {
     thumbnailX6.setAttribute("src", "./assets/cars-thumbnails/bmwx6m-thumbnail.png")
     thumbnailX6.style.width = "10.5vh"
     aa3B.appendChild(thumbnailX6)
-    
+
 
     // Mercedes Benz
-    
+
     let liiM = document.createElement("li")
     liiM.setAttribute("class", "-hasSubmenu")
-    
+
     ul2.appendChild(liiM)
 
     let aaM = document.createElement("a")
     aaM.setAttribute("href", "#")
     aaM.classList.add("menuCarBrand")
-    var linkTextM = document.createTextNode("Mercedes Benz");
+    let linkTextM = document.createTextNode("Mercedes Benz");
 
     let carLogoMb = document.createElement("img");
     carLogoMb.setAttribute("src", "./assets/cars-logo/MB-logo.png")
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aaM.appendChild(carLogoMb)
 
     let ul3M = document.createElement("ul")
-    
+
     liiM.appendChild(ul3M)
 
     let li1M = document.createElement("li")
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let aa1M = document.createElement("a")
     aa1M.setAttribute("href", "GLS63.html")
     aa1M.classList.add("menuCarBrand")
-    var linkTextLi1M = document.createTextNode("GLS 63 4MATIC+");
+    let linkTextLi1M = document.createTextNode("GLS 63 4MATIC+");
     ul3M.appendChild(li1M)
     li1M.appendChild(aa1M)
     aa1M.appendChild(linkTextLi1M)
@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let aa2M = document.createElement("a")
     aa2M.setAttribute("href", "GT63S.html")
     aa2M.classList.add("menuCarBrand")
-    var linkTextLi2M = document.createTextNode("GT 63 S 4MATIC+");
+    let linkTextLi2M = document.createTextNode("GT 63 S 4MATIC+");
     ul3M.appendChild(li2M)
     li2M.appendChild(aa2M)
     aa2M.appendChild(linkTextLi2M)
@@ -285,11 +285,11 @@ document.addEventListener("DOMContentLoaded", () => {
     aa2M.appendChild(thumbnailGT)
 
     let li3M = document.createElement("li")
-    li3M.classList.add("noSubmenu") 
+    li3M.classList.add("noSubmenu")
     let aa3M = document.createElement("a")
     aa3M.setAttribute("href", "S500.html")
     aa3M.classList.add("menuCarBrand")
-    var linkTextLi3M = document.createTextNode("S 500 4MATIC");
+    let linkTextLi3M = document.createTextNode("S 500 4MATIC");
     ul3M.appendChild(li3M)
     li3M.appendChild(aa3M)
     aa3M.appendChild(linkTextLi3M)
@@ -298,19 +298,19 @@ document.addEventListener("DOMContentLoaded", () => {
     thumbnailS.setAttribute("src", "./assets/cars-thumbnails/s-thumbnail.png")
     thumbnailS.style.width = "10.5vh"
     aa3M.appendChild(thumbnailS)
-    
+
 
     // Porsche
-    
+
     let liiP = document.createElement("li")
     liiP.setAttribute("class", "-hasSubmenu")
-    
+
     ul2.appendChild(liiP)
 
     let aaP = document.createElement("a")
     aaP.setAttribute("href", "#")
     aaP.classList.add("menuCarBrand")
-    var linkTextP = document.createTextNode("Porsche");
+    let linkTextP = document.createTextNode("Porsche");
 
     let carLogoPorsche = document.createElement("img");
     carLogoPorsche.setAttribute("src", "./assets/cars-logo/PORSCHE-logo.png")
@@ -321,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aaP.appendChild(carLogoPorsche)
 
     let ul3P = document.createElement("ul")
-    
+
     liiP.appendChild(ul3P)
 
     let li1P = document.createElement("li")
@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let aa1P = document.createElement("a")
     aa1P.setAttribute("href", "911TurboS.html")
     aa1P.classList.add("menuCarBrand")
-    var linkTextLi1P = document.createTextNode("911 Turbo S");
+    let linkTextLi1P = document.createTextNode("911 Turbo S");
     ul3P.appendChild(li1P)
     li1P.appendChild(aa1P)
     aa1P.appendChild(linkTextLi1P)
@@ -344,7 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let aa2P = document.createElement("a")
     aa2P.setAttribute("href", "CayenneTurbo.html")
     aa2P.classList.add("menuCarBrand")
-    var linkTextLi2P = document.createTextNode("Cayenne Turbo Coupé");
+    let linkTextLi2P = document.createTextNode("Cayenne Turbo Coupé");
     ul3P.appendChild(li2P)
     li2P.appendChild(aa2P)
     aa2P.appendChild(linkTextLi2P)
@@ -353,6 +353,64 @@ document.addEventListener("DOMContentLoaded", () => {
     thumbnailCayS.setAttribute("src", "./assets/cars-thumbnails/cayenneS-thumbnail.png")
     thumbnailCayS.style.width = "10.5vh"
     aa2P.appendChild(thumbnailCayS)
+
+    // Game
+    let game = document.createElement("li")
+    game.setAttribute("class", "-hasSubmenu")
+    let aGame = document.createElement("a")
+    aGame.setAttribute("href", "#")
+    let linkTextGame = document.createTextNode("Hry")
+
+    ul1.appendChild(game)
+    game.appendChild(aGame)
+    aGame.appendChild(linkTextGame)
+
+    let ulGames = document.createElement("ul")
+    game.appendChild(ulGames)
+
+    // adam
+    let liAdamGame = document.createElement("li")
+    ulGames.appendChild(liAdamGame)
+
+    let aAdamGame = document.createElement("a")
+    aAdamGame.setAttribute("href", "Adam.html")
+    liAdamGame.appendChild(aAdamGame)
+
+    let textAdamGame = document.createTextNode("Adam Trebichalský")
+    aAdamGame.appendChild(textAdamGame)
+
+    // filip m
+    let liFlipmGame = document.createElement("li")
+    ulGames.appendChild(liFlipmGame)
+
+    let aFilipmGame = document.createElement("a")
+    aFilipmGame.setAttribute("href", "Gajdos.html")
+    liFlipmGame.appendChild(aFilipmGame)
+
+    let textFilipmGame = document.createTextNode("Filip Michal Gajdoš")
+    aFilipmGame.appendChild(textFilipmGame)
+
+    // filip
+    let liFilipGame = document.createElement("li")
+    ulGames.appendChild(liFilipGame)
+
+    let aFilipGame = document.createElement("a")
+    aFilipGame.setAttribute("href", "Ferko.html")
+    liFilipGame.appendChild(aFilipGame)
+
+    let textFilipGame = document.createTextNode("Filip Ferko")
+    aFilipGame.appendChild(textFilipGame)
+
+    // andrej
+    let liAndrejGame = document.createElement("li")
+    ulGames.appendChild(liAndrejGame)
+
+    let aAndrejGame = document.createElement("a")
+    aAndrejGame.setAttribute("href", "#")
+    liAndrejGame.appendChild(aAndrejGame)
+
+    let textAndrejGame = document.createTextNode("Andrej Urbanek")
+    aAndrejGame.appendChild(textAndrejGame)
 
     //Contact
     let contact = document.createElement("li")
@@ -363,16 +421,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ul1.appendChild(contact)
     contact.appendChild(Acontact)
     Acontact.appendChild(linkTextContact)
-
-    // Game
-    let game = document.createElement("li")
-    let Ggame = document.createElement("a")
-    Ggame.setAttribute("href", "game.html")
-    var linkTextGame = document.createTextNode("Hra");                
-
-    ul1.appendChild(game)
-    game.appendChild(Ggame)
-    Ggame.appendChild(linkTextGame)
 
     // Search
 
@@ -399,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.setAttribute("type", "submit");
     btn.setAttribute("data-toggle", "modal");
     btn.setAttribute("data-target", "#modal");
-    var TextBtn = document.createTextNode("Search");
+    let TextBtn = document.createTextNode("Search");
 
     form.appendChild(input);
     form.appendChild(btn);
@@ -409,19 +457,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let topDiv = document.getElementById("dateTimeName")
     let date = document.createElement("p");
-    date.setAttribute("id","datetime");
+    date.setAttribute("id", "datetime");
     topDiv.appendChild(date);
     function date_time() {
-        var dt = new Date();
+        let dt = new Date();
         document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
     }
     const interval = setInterval(date_time(), 1000);
-    
+
 
     //Name Day
 
     let name_day = document.createElement("p");
-    name_day.setAttribute("id","name_day");    
+    name_day.setAttribute("id", "name_day");
     topDiv.appendChild(name_day);
 
     function loadXMLDoc(dname) {
@@ -482,13 +530,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function search(event) {
         event.preventDefault();
-        var search = document.getElementById("search").value;
+        let search = document.getElementById("search").value;
         const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
         if (numbers.includes(search[0])) {
             console.log(true)
-            var date;
+            let date;
             if (search[2] == "." && search[5] == ".") {
-                var tmp = [];
+                let tmp = [];
                 tmp.push(search[3]);
                 tmp.push(search[4]);
                 tmp.push(search[0]);
@@ -498,7 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
             else if (search[1] == "." && search[3] == ".") {
-                var tmp = [];
+                let tmp = [];
                 tmp.push("0");
                 tmp.push(search[2]);
                 tmp.push("0");
@@ -508,7 +556,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
             else if (search[2] == "." && search[4] == ".") {
-                var tmp = [];
+                let tmp = [];
                 tmp.push("0");
                 tmp.push(search[3]);
                 tmp.push(search[0]);
@@ -516,14 +564,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 date = tmp.join("");
                 console.log(date);
             }
-            else {
-                var tmp = [];
+            else if(search[1] == "." && search[4] == ".") {
+                let tmp = [];
                 tmp.push(search[2]);
                 tmp.push(search[3]);
                 tmp.push("0");
                 tmp.push(search[0]);
                 date = tmp.join("");
                 console.log(date);
+            }
+            else{
+                document.getElementById("modal_text").innerHTML = "Zadali ste zlý formát dátumu. Správny formát DD.MM.";
             }
             let xmlDoc = loadXMLDoc("meniny.xml");
             let x = xmlDoc.getElementsByTagName("den");
@@ -609,20 +660,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Modal
     let modal1 = document.createElement("div")
-    modal1.classList.add("modal","fade")
+    modal1.classList.add("modal", "fade")
     modal1.id = "modal"
-    modal1.setAttribute("tabinder","-1")
-    modal1.setAttribute("role","dialog")
+    modal1.setAttribute("tabinder", "-1")
+    modal1.setAttribute("role", "dialog")
 
     let modal2 = document.createElement("div")
     modal2.classList.add("modal-dialog")
-    modal2.setAttribute("role","document")
+    modal2.setAttribute("role", "document")
     modal1.appendChild(modal2)
 
     let modal3 = document.createElement("div")
     modal3.classList.add("modal-content")
-    modal2.appendChild(modal3)    
-    
+    modal2.appendChild(modal3)
+
     let modal4 = document.createElement("div")
     modal4.classList.add("modal-body")
     modal3.appendChild(modal4)
@@ -634,11 +685,26 @@ document.addEventListener("DOMContentLoaded", () => {
     let modal5 = document.createElement("div")
     modal5.classList.add("modal-footer")
     modal3.appendChild(modal5)
-    
-    document.body.append(modal1)   
+
+    document.body.append(modal1)
+
+    // Page views counter
+    let divViews = document.createElement('div')
+    divViews.id = "cntr"
+    document.body.append(divViews)
+
+    let myStorage = window.localStorage, pageCount;
+    window.addEventListener('load', function () {
+        if (!myStorage.getItem("pageCount")) {
+            myStorage.setItem("pageCount", 1);
+        } else {
+            pageCount = parseInt(myStorage.getItem("pageCount"));
+            let newCount = pageCount + 1;
+            myStorage.setItem("pageCount", newCount);
+        }
+        document.getElementById("cntr").innerHTML = "Page views: " + myStorage.getItem("pageCount");
+    });
 })
-
-
 
 //Breadcrumbs functions
 
@@ -704,8 +770,16 @@ function breadcrumbs() {
             a.innerHTML = "S 500 4MATIC";
         else if (local[i].includes("911TurboS"))
             a.innerHTML = "911 Turbo S";
-            else if (local[i].includes("CayenneTurbo"))
+        else if (local[i].includes("CayenneTurbo"))
             a.innerHTML = "Cayenne Turbo Coupé";
+        else if (local[i].includes("Gajdos"))
+            a.innerHTML = "Hra-Gajdoš";
+        else if (local[i].includes("Ferko"))
+            a.innerHTML = "Hra-Ferko";
+        else if (local[i].includes("Adam"))
+            a.innerHTML = "Hra-Adam";
+        else if (local[i].includes("Andrej"))
+            a.innerHTML = "Hra-Andrej";
         else
             a.innerHTML = "Home";
         if (i != 0) {
@@ -719,3 +793,5 @@ function breadcrumbs() {
     }
     localStorage.setItem("kys", local);
 }
+
+
