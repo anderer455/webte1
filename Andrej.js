@@ -24,7 +24,7 @@ let height = window.innerHeight;
 const rozptyl = 40;
 
 function loadImages(sources, callback) {
-    let assetDir = '/assets/Andrej/';
+    let assetDir = '/assets/andrej_game/';
     let images = {};
     let loadedImages = 0;
     let numImages = 0;
