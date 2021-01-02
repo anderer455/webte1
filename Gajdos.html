@@ -51,6 +51,12 @@
     
         ul#win li {
           display: inline;
+          margin: 5px;
+        }
+        
+        #win {
+            display: flex;
+            flex-direction: column;
         }
       </style>
 </head>
@@ -63,12 +69,12 @@
         <H1 style="border-bottom: solid 6px black; border-radius:  10px 10px; max-width: 578px; max-height: 530px;">Postav
             košík s ovocím</H1>
         <ul style="list-style-type: none; margin: 30px; text-align: center;" id="win">
-            <li class="fw-bold" id="time">Čas: 0</li>
             <li><button class="btn btn-secondary" id="demo" onclick="demo()">Demo</button></li>
+            <li class="fw-bold" id="time">Čas: 0</li>
         </ul>
     </div>
     <div id="container"></div>
-    <div>Filip Michal Gajdoš <i class="far fa-copyright"></i></div>
+    <div style="margin-left: 5px;">Filip Michal Gajdoš <i class="far fa-copyright"></i></div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

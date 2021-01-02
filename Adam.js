@@ -46,7 +46,7 @@ function stop() { clearInterval(timerInterval); }
 let height = window.innerHeight;
 const rozptyl = 40;
 
-function loadImages(sources, callback) {
+function fetchImg(sources, callback) {
     let assetDir = '/assets/game-adam/';
     let images = {};
     let loadedImages = 0;
@@ -204,7 +204,7 @@ for (let key in carParts) {
         }, 50);
         }
     });
-
+    
     part.on('mouseover', function () {
         partLayer.draw();
         document.body.style.cursor = 'pointer';
@@ -256,7 +256,7 @@ dvere: 'dvere.png',
 kolesopredne: 'kolesopredne.png',
 kolesozadne: 'kolesozadne.png'
 };
-loadImages(sources, initStage);
+fetchImg(sources, initStage);
 
 function demoOn() {
     let animation1 = new Konva.Tween({

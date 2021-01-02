@@ -3,7 +3,6 @@ var height = window.innerHeight;
 var time = 0;
 var cancel;
 
-
 function timer() {
     cancel = setInterval(() => {
         time++;

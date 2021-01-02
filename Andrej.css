@@ -28,4 +28,7 @@ body h1 {
     margin: 10px;
     font-size: large;
     font-weight: bold;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2vh;
 }
