@@ -406,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ulGames.appendChild(liAndrejGame)
 
     let aAndrejGame = document.createElement("a")
-    aAndrejGame.setAttribute("href", "#")
+    aAndrejGame.setAttribute("href", "Andrej.html")
     liAndrejGame.appendChild(aAndrejGame)
 
     let textAndrejGame = document.createTextNode("Andrej Urbanek")
