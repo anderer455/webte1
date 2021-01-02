@@ -24,7 +24,7 @@ let height = window.innerHeight;
 const rozptyl = 40;
 
 function loadImages(sources, callback) {
-    let assetDir = '/assets/andrej_game/';
+    let assetDir = '/assets/andrej-game/';
     let images = {};
     let loadedImages = 0;
     let numImages = 0;
@@ -63,7 +63,7 @@ function drawBackground(background, carImage) {
 
 function initStage(images) {
     let stage = new Konva.Stage({
-    container: 'game_container',
+    container: 'container',
     width: 1280,
     height: 900,
 });
@@ -220,14 +220,14 @@ drawBackground(background,images.car);
 }
 
 let sources = {
-car: 'Pokemon_BG.png',
-naraznik: 'Pokemon1.png',
-kapota: 'Pokemon2.png',
-svetlo: 'Pokemon3.png',
-spz: 'Pokemon4.png',
-dvere: 'Pokemon5.png',
-kolesopredne: 'Pokemon6.png',
-pokemon7: 'Pokemon7.png',
-kolesozadne: 'Pokemon8.png'
+car: 'Pokemon-BG.png',
+naraznik: 'Pokemon-1.png',
+kapota: 'Pokemon-2.png',
+svetlo: 'Pokemon-3.png',
+spz: 'Pokemon-4.png',
+dvere: 'Pokemon-5.png',
+kolesopredne: 'Pokemon-6.png',
+pokemon7: 'Pokemon-7.png',
+kolesozadne: 'Pokemon-8.png'
 };
 loadImages(sources, initStage);
