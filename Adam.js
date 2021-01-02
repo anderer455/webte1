@@ -1,3 +1,6 @@
+
+let partShape = [];
+let demoOnOff = 0;
 // Stopwatch
 function timeToString(time) {
     let diffInHrs = time / 3600000;
@@ -46,34 +49,37 @@ let height = window.innerHeight;
 const rozptyl = 40;
 
 function loadImages(sources, callback) {
-let assetDir = '/assets/kanva/';
-let images = {};
-let loadedImages = 0;
-let numImages = 0;
-for (let src in sources) {
-    numImages++;
-}
-for (let src in sources) {
-    images[src] = new Image();
-    images[src].onload = function () {
-    if (++loadedImages >= numImages) {
-        callback(images);
+    let assetDir = '/assets/game-adam/';
+    let images = {};
+    let loadedImages = 0;
+    let numImages = 0;
+    for (let src in sources) {
+        numImages++;
+    }
+    for (let src in sources) {
+        images[src] = new Image();
+        images[src].onload = function () {
+        if (++loadedImages >= numImages) {
+            callback(images);
+        }
+        };
+        images[src].src = assetDir + sources[src];
     }
     };
     images[src].src = assetDir + sources[src];
 }
 }
-function isNearOutline(part, outline) {
-let a = part;
-let o = outline;
-let ax = a.x();
-let ay = a.y();
+function positionController(part, outline) {
+    let a = part;
+    let o = outline;
+    let ax = a.x();
+    let ay = a.y();
 
-if (ax > o.x - rozptyl && ax < o.x + rozptyl && ay > o.y - rozptyl && ay < o.y + rozptyl) {
-    return true;
-} else {
-    return false;
-}
+    if (ax > o.x - rozptyl && ax < o.x + rozptyl && ay > o.y - rozptyl && ay < o.y + rozptyl) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
@@ -89,13 +95,12 @@ let stage = new Konva.Stage({
     width: 1280,
     height: 900,
 });
-let background = new Konva.Layer();
-let partLayer = new Konva.Layer();
-let partShape = [];
+var background = new Konva.Layer();
+var partLayer = new Konva.Layer();
 let score = 0;
 
 // image positions
-let parts = {
+let carParts = {
     naraznik: {
     x: 50,
     y: 50,
@@ -157,12 +162,11 @@ let outlines = {
     },
 };
 
-// create draggable parts
-for (let key in parts) {
-    // anonymous function to induce scope
+// creating draggable carparts
+for (let key in carParts) {
     (function () {
     let privKey = key;
-    let par = parts[key];
+    let par = carParts[key];
 
     let part = new Konva.Image({
         image: images[key],
@@ -172,9 +176,15 @@ for (let key in parts) {
     });
 
     part.on('dragstart', function () {
-        this.moveToTop();
-        partLayer.draw();
-        start();
+        if (demoOnOff == 0) {
+            this.moveToTop();
+            partLayer.draw();
+            start();
+            let dm = document.getElementById("demoBtn")
+            dm.setAttribute("disabled",false)
+        }
+        else if (demoOnOff == 1)
+            demoOf();        
     });
     /*
         * check if part is in the right spot and
@@ -182,7 +192,7 @@ for (let key in parts) {
         */
     part.on('dragend', function () {
         let outline = outlines[privKey + '_black'];
-        if (!part.inRightPlace && isNearOutline(part, outline)) {
+        if (!part.inRightPlace && positionController(part, outline)) {
         part.position({
             x: outline.x,
             y: outline.y,
@@ -195,7 +205,7 @@ for (let key in parts) {
             stop();
         }
 
-        // disable drag and drop
+        // disabling drag&drop
         setTimeout(function () {
             part.draggable(false);
         }, 50);
@@ -222,7 +232,7 @@ for (let key in parts) {
     })();
 }
 
-// create part outlines
+// create carparts outlines
 for (let key in outlines) {
     // anonymous function to induce scope
     (function () {
@@ -248,22 +258,141 @@ drawBackground(background,images.car);
 let sources = {
 car: 'car.png',
 naraznik: 'naraznik.png',
-// snake_glow: 'naraznik-glow.png',
-// snake_black: 'naraznik-black.png',
 kapota: 'kapota.png',
-// lion_glow: 'kapota-glow.png',
-// lion_black: 'kapota-black.png',
 svetlo: 'svetlo.png',
-// monkey_glow: 'svetlo-glow.png',
-// monkey_black: 'svetlo-black.png',
 spz: 'spz.png',
-// giraffe_glow: 'spz-glow.png',
-// giraffe_black: 'spz-black.png',
 dvere: 'dvere.png',
 kolesopredne: 'kolesopredne.png',
 kolesozadne: 'kolesozadne.png'
 };
 loadImages(sources, initStage);
 
+function demoOn() {
+    let animation1 = new Konva.Tween({
+        node: partShape[0],
+        duration: 1,
+        x: 152,
+        y: 647,
+    })
+    let animation2 = new Konva.Tween({
+        node: partShape[1],
+        duration: 2,
+        x: 184.5,
+        y: 574,
+    })
+    let animation3 = new Konva.Tween({
+        node: partShape[2],
+        duration: 3,
+        x: 222,
+        y: 720,
+    })
+    let animation4 = new Konva.Tween({
+        node: partShape[3],
+        duration: 4,
+        x: 408,
+        y: 666,
+    })
+    let animation5 = new Konva.Tween({
+        node: partShape[4],
+        duration: 5,
+        x: 767,
+        y: 564,
+    })
+    let animation6 = new Konva.Tween({
+        node: partShape[5],
+        duration: 6,
+        x: 651,
+        y: 680,
+    })
+    let animation7 = new Konva.Tween({
+        node: partShape[6],
+        duration: 7,
+        x: 1050,
+        y: 677,
+    })
+    
+    animation1.play();
+    partShape[0].moveToTop();
+    animation2.play();
+    partShape[1].moveToTop();
+    animation3.play();
+    partShape[2].moveToTop();
+    animation4.play();
+    partShape[3].moveToTop();
+    animation5.play();
+    partShape[4].moveToTop();
+    animation6.play();
+    partShape[5].moveToTop();
+    animation7.play();
+    partShape[6].moveToTop();
+
+    let dm = document.getElementById("demoBtn")
+    dm.setAttribute("disabled",true)
+    demoOnOff = 1;
+}
+
+function demoOf() {
+    let animation1 = new Konva.Tween({
+        node: partShape[0],
+        duration: 0.5,
+        x: 50,
+        y: 50,
+    })
+    let animation2 = new Konva.Tween({
+        node: partShape[1],
+        duration: 1,
+        x: 750,
+        y: 70,
+    })
+    let animation3 = new Konva.Tween({
+        node: partShape[2],
+        duration: 1.5,
+        x: 650,
+        y: 210,
+    })
+    let animation4 = new Konva.Tween({
+        node: partShape[3],
+        duration: 2,
+        x: 800,
+        y: 320,
+    })
+    let animation5 = new Konva.Tween({
+        node: partShape[4],
+        duration: 2.5,
+        x: 50,
+        y: 300,
+    })
+    let animation6 = new Konva.Tween({
+        node: partShape[5],
+        duration: 3,
+        x: 1100,
+        y: 200,
+    })
+    let animation7 = new Konva.Tween({
+        node: partShape[6],
+        duration: 3.5,
+        x: 600,
+        y: 20,
+    })
+    
+    animation1.play();
+    partShape[0].moveToTop();
+    animation2.play();
+    partShape[1].moveToTop();
+    animation3.play();
+    partShape[2].moveToTop();
+    animation4.play();
+    partShape[3].moveToTop();
+    animation5.play();
+    partShape[4].moveToTop();
+    animation6.play();
+    partShape[5].moveToTop();
+    animation7.play();
+    partShape[6].moveToTop();
+
+    let dm = document.getElementById("demoBtn")
+    dm.setAttribute("disabled",false)
+    demoOnOff = 0;
+}
 
 
