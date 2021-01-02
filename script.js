@@ -564,7 +564,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 date = tmp.join("");
                 console.log(date);
             }
-            else {
+            else if(search[1] == "." && search[4] == ".") {
                 let tmp = [];
                 tmp.push(search[2]);
                 tmp.push(search[3]);
@@ -572,6 +572,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 tmp.push(search[0]);
                 date = tmp.join("");
                 console.log(date);
+            }
+            else{
+                document.getElementById("modal_text").innerHTML = "Zadali ste zlý formát dátumu. Správny formát DD.MM.";
             }
             let xmlDoc = loadXMLDoc("meniny.xml");
             let x = xmlDoc.getElementsByTagName("den");

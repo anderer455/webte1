@@ -2,7 +2,7 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 
 function loadImages(sources, callback) {
-  var assetDir = '';
+  var assetDir = '/assets/ferko/';
   var images = {};
   var loadedImages = 0;
   var numImages = 0;
@@ -164,7 +164,7 @@ function initStage(images) {
       orech.on('dragstart', function () {
         this.moveToTop();
         orechLayer.draw();
-        
+
       });
       /*
        * check if orech is in the right spot and
@@ -239,28 +239,28 @@ function initStage(images) {
 
 var sources = {
   beach: 'BGgrey.png',
-  orech1: 'nuts/orech1.png',
-  orech1_grey: 'nuts-grey/orech1-grey.png',
-  orech2: 'nuts/orech2.png',
-  orech2_grey: 'nuts-grey/orech2-grey.png',
-  orech3: 'nuts/orech3.png',
-  orech3_grey: 'nuts-grey/orech3-grey.png',
-  orech4: 'nuts/orech4.png',
-  orech4_grey: 'nuts-grey/orech4-grey.png',
-  orech5: 'nuts/orech5.png',
-  orech5_grey: 'nuts-grey/orech5-grey.png',
-  orech6: 'nuts/orech6.png',
-  orech6_grey: 'nuts-grey/orech6-grey.png',
-  orech7: 'nuts/orech7.png',
-  orech7_grey: 'nuts-grey/orech7-grey.png',
-  orech8: 'nuts/orech8.png',
-  orech8_grey: 'nuts-grey/orech8-grey.png',
-  orech9: 'nuts/orech9.png',
-  orech9_grey: 'nuts-grey/orech9-grey.png',
-  orech10: 'nuts/orech10.png',
-  orech10_grey: 'nuts-grey/orech10-grey.png',
-  orech11: 'nuts/orech11.png',
-  orech11_grey: 'nuts-grey/orech11-grey.png',
+  orech1: 'orech1.png',
+  orech1_grey: 'orech1-grey.png',
+  orech2: 'orech2.png',
+  orech2_grey: 'orech2-grey.png',
+  orech3: 'orech3.png',
+  orech3_grey: 'orech3-grey.png',
+  orech4: 'orech4.png',
+  orech4_grey: 'orech4-grey.png',
+  orech5: 'orech5.png',
+  orech5_grey: 'orech5-grey.png',
+  orech6: 'orech6.png',
+  orech6_grey: 'orech6-grey.png',
+  orech7: 'orech7.png',
+  orech7_grey: 'orech7-grey.png',
+  orech8: 'orech8.png',
+  orech8_grey: 'orech8-grey.png',
+  orech9: 'orech9.png',
+  orech9_grey: 'orech9-grey.png',
+  orech10: 'orech10.png',
+  orech10_grey: 'orech10-grey.png',
+  orech11: 'orech11.png',
+  orech11_grey: 'orech11-grey.png',
 };
 loadImages(sources, initStage);
 
