@@ -1,7 +1,8 @@
-.AAA{
+.AAA {
     margin-left : 20%;
 }
-.cas{
+
+.cas {
     font-size: 200%;
     font-style: italic;
     margin-left : 20%;
@@ -9,7 +10,22 @@
     margin-top: 3%;
 }
 
-#container{
-    margin-left : 20%;
-    margin-bottom: 3%;
+#pokemon-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+body h1 {
+    text-align: center;
+}
+
+#stopwatch {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+    font-size: large;
+    font-weight: bold;
 }

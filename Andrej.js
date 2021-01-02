@@ -1,233 +1,188 @@
-let startTime = 0;
-let elapsedTime = 0;
-let timerInterval;
+var width = window.innerWidth;
+var height = window.innerHeight;
+var time = 0;
+var cancel;
 
-function print(txt) {
-    document.getElementById("display").innerHTML = txt;
+
+function timer() {
+    cancel = setInterval(() => {
+        time++;
+        let tmp = document.getElementById("time");
+        tmp.innerHTML = "Čas: " + time;
+    }, 1000)
 }
-
-function start() {
-    if(!startTime) {
-        startTime = Date.now() - elapsedTime;
-        timerInterval = setInterval(function printTime() {
-            elapsedTime = Date.now() - startTime;
-            print(timeToString(elapsedTime));
-        }, 10);
-    }
-}
-
-function stop() {
-    clearInterval(timerInterval);
-}
-
-let height = window.innerHeight;
-const rozptyl = 40;
 
 function loadImages(sources, callback) {
-    let assetDir = '/assets/andrej-game/';
-    let images = {};
-    let loadedImages = 0;
-    let numImages = 0;
-    for (let src in sources) {
+    var assetDir = '/assets/andrej-game/';
+    var images = {};
+    var loadedImages = 0;
+    var numImages = 0;
+    for (var src in sources) {
         numImages++;
     }
-    for (let src in sources) {
+    for (var src in sources) {
         images[src] = new Image();
         images[src].onload = function () {
-        if (++loadedImages >= numImages) {
-            callback(images);
-        }
+            if (++loadedImages >= numImages) {
+                callback(images);
+            }
         };
         images[src].src = assetDir + sources[src];
     }
 }
+function isNearOutline(pokemon, outline) {
+    var a = pokemon;
+    var o = outline;
+    var ax = a.x();
+    var ay = a.y();
 
-function isNearOutline(part, outline) {
-    let a = part;
-    let o = outline;
-    let ax = a.x();
-    let ay = a.y();
-
-    if (ax > o.x - rozptyl && ax < o.x + rozptyl && ay > o.y - rozptyl && ay < o.y + rozptyl) {
+    if (ax > o.x - 35 && ax < o.x + 35 && ay > o.y - 35 && ay < o.y + 35) {
         return true;
     } else {
         return false;
     }
 }
-
-function drawBackground(background, carImage) {
-    let context = background.getContext();
-    context.drawImage(carImage, 0, 0);
-    context.setAttr('textAlign', 'center');
+function drawBackground(background, backgroundImg, text) {
+    var context = background.getContext();
+    context.drawImage(backgroundImg, 0, 0);
 }
 
 function initStage(images) {
-    let stage = new Konva.Stage({
-    container: 'container',
-    width: 1280,
-    height: 900,
-});
+    var stage = new Konva.Stage({
+        container: 'pokemon-container',
+        width: 1340,
+        height: 960,
+    });
+    var background = new Konva.Layer();
+    var pokemonLayer = new Konva.Layer();
+    var score = 0;
+    var pokemonshapes = [];
+    // image positions
+    var pokemons = {
+        pokemon1: {x: 980, y: 70,},
+        pokemon2: {x: 690, y: 30,},
+        pokemon3: {x: 210, y: 300,},
+        pokemon4: {x: 120, y: 500,},
+        pokemon5: {x: 1000, y: 300,},
+        pokemon6: {x: 240, y: 10,},
+        pokemon7: {x: 420, y: 100,},
+        pokemon8: {x: 980, y: 600,},
+    };
 
-let background = new Konva.Layer();
-let partLayer = new Konva.Layer();
-let partShape = [];
-let score = 0;
+    var outlines = {
+        pokemon1_placeholder: {x: 558, y: 803,},
+        pokemon2_placeholder: {x: 386, y: 360,},
+        pokemon3_placeholder: {x: 684, y: 342,},
+        pokemon4_placeholder: {x: 586, y: 421,},
+        pokemon5_placeholder: {x: 468, y: 540,},
+        pokemon6_placeholder: {x: 605, y: 672,},
+        pokemon7_placeholder: {x: 401, y: 725,},
+        pokemon8_placeholder: {x: 723, y: 616,},
+    };
 
-let parts = {
-    naraznik: {
-    x: 50,
-    y: 50,
-    },
-    kapota: {
-    x: 750,
-    y: 70,
-    },
-    spz: {
-    x: 650,
-    y: 210,
-    },
-    svetlo: {
-    x: 800,
-    y: 320,
-    },
-    dvere: {
-    x: 50,
-    y: 300,
-    },
-    kolesopredne: {
-    x: 1100,
-    y: 200,
-    },
-    pokemon7: {
-    x: 1100,
-    y: 200,
-    },
-    kolesozadne: {
-    x: 600,
-    y: 20,
+    // create draggable pokemons
+    for (var key in pokemons) {
+        // anonymous function to induce scope
+        (function () {
+            var privKey = key;
+            var anim = pokemons[key];
+
+            var pokemon = new Konva.Image({
+                image: images[key],
+                x: anim.x,
+                y: anim.y,
+                draggable: true,
+            });
+
+            pokemon.on('dragstart', function () {
+                this.moveToTop();
+                pokemonLayer.draw();
+            });
+            /*
+             * check if pokemon is in the right spot and
+             * snap into place if it is
+             */
+            pokemon.on('dragend', function () {
+                var outline = outlines[privKey + '_placeholder'];
+                if (!pokemon.inRightPlace && isNearOutline(pokemon, outline)) {
+                    pokemon.position({
+                        x: outline.x,
+                        y: outline.y,
+                    });
+                    pokemonLayer.draw();
+                    pokemon.inRightPlace = true;
+
+                    if (score == 0) {
+                        timer();
+                    }
+
+                    if (++score >= 8) {
+                        clearInterval(cancel);                        
+                        drawBackground(background, images.background);
+                    }
+
+                    // disable drag and drop
+                    setTimeout(function () {
+                        pokemon.draggable(false);
+                    }, 50);
+                }
+            });
+            // return pokemon on mouseout
+            pokemon.on('mouseover', function () {
+                pokemonLayer.draw();
+                document.body.style.cursor = 'pointer';
+            });
+
+            pokemon.on('mouseout', function () {
+                pokemon.image(images[privKey]);
+                pokemonLayer.draw();
+                document.body.style.cursor = 'default';
+            });
+
+            pokemon.on('dragmove', function () {
+                document.body.style.cursor = 'pointer';
+            });
+
+            pokemonLayer.add(pokemon);
+            pokemonshapes.push(pokemon);
+        })();
     }
-};
 
-let outlines = {
-    naraznik_black: {
-    x: 152,
-    y: 647,
-    },
-    kapota_black: {
-    x: 184.5,
-    y: 574,
-    },
-    spz_black: {
-    x: 222,
-    y: 720,
-    },
-    svetlo_black: {
-    x: 408,
-    y: 666,
-    },
-    dvere_black: {
-    x: 767,
-    y: 564,
-    },
-    kolesopredne_black: {
-    x: 651,
-    y: 680,
-    },
-    kolesozadne_black: {
-    x: 1050,
-    y: 677,
-    },
-};
+    // create pokemon outlines
+    for (var key in outlines) {
+        // anonymous function to induce scope
+        (function () {
+            var imageObj = images[key];
+            var out = outlines[key];
 
-for (let key in parts) {
-    (function () {
-    let privKey = key;
-    let par = parts[key];
+            var outline = new Konva.Image({
+                image: imageObj,
+                x: out.x,
+                y: out.y,
+            });
 
-    let part = new Konva.Image({
-        image: images[key],
-        x: par.x,
-        y: par.y,
-        draggable: true,
-    });
+            pokemonLayer.add(outline);
+        })();
+    }
 
-    part.on('dragstart', function () {
-        this.moveToTop();
-        partLayer.draw();
-        start();
-    });
-    
-    part.on('dragend', function () {
-        let outline = outlines[privKey + '_black'];
-        if (!part.inRightPlace && isNearOutline(part, outline)) {
-        part.position({
-            x: outline.x,
-            y: outline.y,
-        });
-        partLayer.draw();
-        part.inRightPlace = true;
+    stage.add(background);
+    stage.add(pokemonLayer);
 
-        if (++score >= 7) {
-            drawBackground(background, images.car);
-            stop();
-            document.getElementById("fail").style.visibility = "visible"
-        }
-
-        setTimeout(function () {
-            part.draggable(false);
-        }, 50);
-        }
-    });
-
-    part.on('mouseover', function () {
-        partLayer.draw();
-        document.body.style.cursor = 'pointer';
-    });
-    part.on('mouseout', function () {
-        part.image(images[privKey]);
-        partLayer.draw();
-        document.body.style.cursor = 'default';
-    });
-
-    part.on('dragmove', function () {
-        document.body.style.cursor = 'pointer';
-    });
-
-    partLayer.add(part);
-    partShape.push(part);
-    })();
+    drawBackground(
+        background,
+        images.background,
+    );
 }
 
-for (let key in outlines) {
-    (function () {
-    let imageObj = images[key];
-    let out = outlines[key];
-
-    let outline = new Konva.Image({
-        image: imageObj,
-        x: out.x,
-        y: out.y,
-    });
-
-    partLayer.add(outline);
-    })();
-}
-
-stage.add(background);
-stage.add(partLayer);
-
-drawBackground(background,images.car);
-}
-
-let sources = {
-car: 'Pokemon-BG.png',
-naraznik: 'Pokemon-1.png',
-kapota: 'Pokemon-2.png',
-svetlo: 'Pokemon-3.png',
-spz: 'Pokemon-4.png',
-dvere: 'Pokemon-5.png',
-kolesopredne: 'Pokemon-6.png',
-pokemon7: 'Pokemon-7.png',
-kolesozadne: 'Pokemon-8.png'
+var sources = {
+    background: 'Pokemon-BG.png',
+    pokemon1: 'Pokemon-1.png',
+    pokemon2: 'Pokemon-2.png',
+    pokemon3: 'Pokemon-3.png',
+    pokemon4: 'Pokemon-4.png',
+    pokemon5: 'Pokemon-5.png',
+    pokemon6: 'Pokemon-6.png',
+    pokemon7: 'Pokemon-7.png',
+    pokemon8: 'Pokemon-8.png',
 };
 loadImages(sources, initStage);
