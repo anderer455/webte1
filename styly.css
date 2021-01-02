@@ -620,3 +620,22 @@ header hr {
         padding: 0px;
     }
 }
+
+#cntr {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(113,113,113,1) 24%, rgba(18,17,17,1) 100%);
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    font-family: 'Play';
+}
+
+#done {
+    width: 85%;
+}
+
+#done td {
+    text-align: center;
+    width: 2rem;
+}

@@ -39,43 +39,40 @@ function start() {
 
 function stop() { clearInterval(timerInterval); }
 
-
-
 // let width = window.innerWidth;
 let height = window.innerHeight;
 const rozptyl = 40;
 
 function loadImages(sources, callback) {
-let assetDir = '/assets/kanva/';
-let images = {};
-let loadedImages = 0;
-let numImages = 0;
-for (let src in sources) {
-    numImages++;
-}
-for (let src in sources) {
-    images[src] = new Image();
-    images[src].onload = function () {
-    if (++loadedImages >= numImages) {
-        callback(images);
+    let assetDir = '/assets/kanva/';
+    let images = {};
+    let loadedImages = 0;
+    let numImages = 0;
+    for (let src in sources) {
+        numImages++;
     }
-    };
-    images[src].src = assetDir + sources[src];
-}
+    for (let src in sources) {
+        images[src] = new Image();
+        images[src].onload = function () {
+        if (++loadedImages >= numImages) {
+            callback(images);
+        }
+        };
+        images[src].src = assetDir + sources[src];
+    }
 }
 function isNearOutline(part, outline) {
-let a = part;
-let o = outline;
-let ax = a.x();
-let ay = a.y();
+    let a = part;
+    let o = outline;
+    let ax = a.x();
+    let ay = a.y();
 
-if (ax > o.x - rozptyl && ax < o.x + rozptyl && ay > o.y - rozptyl && ay < o.y + rozptyl) {
-    return true;
-} else {
-    return false;
+    if (ax > o.x - rozptyl && ax < o.x + rozptyl && ay > o.y - rozptyl && ay < o.y + rozptyl) {
+        return true;
+    } else {
+        return false;
+    }
 }
-}
-
 
 function drawBackground(background, carImage) {
 let context = background.getContext();
@@ -159,7 +156,6 @@ let outlines = {
 
 // create draggable parts
 for (let key in parts) {
-    // anonymous function to induce scope
     (function () {
     let privKey = key;
     let par = parts[key];
@@ -176,10 +172,8 @@ for (let key in parts) {
         partLayer.draw();
         start();
     });
-    /*
-        * check if part is in the right spot and
-        * snap into place if it is
-        */
+    
+    // check position of img
     part.on('dragend', function () {
         let outline = outlines[privKey + '_black'];
         if (!part.inRightPlace && isNearOutline(part, outline)) {
@@ -193,6 +187,7 @@ for (let key in parts) {
         if (++score >= 7) {
             drawBackground(background, images.car);
             stop();
+            document.getElementById("fail").style.visibility = "visible"
         }
 
         // disable drag and drop
@@ -201,12 +196,11 @@ for (let key in parts) {
         }, 50);
         }
     });
-    // make part glow on mouseover
+
     part.on('mouseover', function () {
         partLayer.draw();
         document.body.style.cursor = 'pointer';
     });
-    // return part on mouseout
     part.on('mouseout', function () {
         part.image(images[privKey]);
         partLayer.draw();
@@ -222,9 +216,8 @@ for (let key in parts) {
     })();
 }
 
-// create part outlines
+// create parts outlines
 for (let key in outlines) {
-    // anonymous function to induce scope
     (function () {
     let imageObj = images[key];
     let out = outlines[key];
@@ -248,17 +241,9 @@ drawBackground(background,images.car);
 let sources = {
 car: 'car.png',
 naraznik: 'naraznik.png',
-// snake_glow: 'naraznik-glow.png',
-// snake_black: 'naraznik-black.png',
 kapota: 'kapota.png',
-// lion_glow: 'kapota-glow.png',
-// lion_black: 'kapota-black.png',
 svetlo: 'svetlo.png',
-// monkey_glow: 'svetlo-glow.png',
-// monkey_black: 'svetlo-black.png',
 spz: 'spz.png',
-// giraffe_glow: 'spz-glow.png',
-// giraffe_black: 'spz-black.png',
 dvere: 'dvere.png',
 kolesopredne: 'kolesopredne.png',
 kolesozadne: 'kolesozadne.png'
