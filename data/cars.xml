@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<cars>
+	<record>
+		<name>Audi</name>
+		<model>A8L</model>
+		<torque>500 Nm</torque>
+		<power>250 kW</power>
+		<acceleration>5.7 s (0-100kmh)</acceleration>
+		<consumption>10.3 - 9.5 l/100km</consumption>
+	</record>
+	<record>
+		<name>Audi</name>
+		<model>RS 7 Sportback</model>
+		<torque>800 Nm</torque>
+		<power>441 kW</power>
+		<acceleration>3.6 s (0-100kmh)</acceleration>
+		<consumption>11.6 - 11.4 l/100km</consumption>
+	</record>
+	<record>
+		<name>Audi</name>
+		<model>RS Q8</model>
+		<torque>800 Nm</torque>
+		<power>441 kW</power>
+		<acceleration>3.8 s (0-100kmh)</acceleration>
+		<consumption>14.2 - 13.7 l/100km</consumption>
+	</record>
+	<record>
+		<name>BMW</name>
+		<model>M850i</model>
+		<torque>750 Nm</torque>
+		<power>390 kW</power>
+		<acceleration>3.9 s (0-100kmh)</acceleration>
+		<consumption>11.4 - 11.5 l/100km</consumption>
+	</record>
+	<record>
+		<name>BMW</name>
+		<model>M5</model>
+		<torque>750 Nm</torque>
+		<power>460 kW</power>
+		<acceleration>3.3 s (0-100kmh)</acceleration>
+		<consumption>11 - 11.3 l/100km</consumption>
+	</record>
+	<record>
+		<name>BMW</name>
+		<model>X6 M</model>
+		<torque>750 Nm</torque>
+		<power>441 kW</power>
+		<acceleration>3.9 s (0-100kmh)</acceleration>
+		<consumption>12.7 - 12.5 l/100km</consumption>
+	</record>
+	<record>
+		<name>Mercedes</name>
+		<model>AMG GLS 63 4MATIC+</model>
+		<torque>850 Nm</torque>
+		<power>450 + 16 kW</power>
+		<acceleration>4.2 s (0-100kmh)</acceleration>
+		<consumption>13 - 12.6 l/100km</consumption>
+	</record>
+	<record>
+		<name>Mercedes</name>
+		<model>AMG GT 63 S 4MATIC</model>
+		<torque>520 Nm</torque>
+		<power>470 kW</power>
+		<acceleration>3.2 s (0-100kmh)</acceleration>
+		<consumption>14 - 11.3 l/100km</consumption>
+	</record>
+	<record>
+		<name>Mercedes</name>
+		<model>S 500 4MATIC</model>
+		<torque>520 Nm</torque>
+		<power>320 kW</power>
+		<acceleration>4.9 s (0-100kmh)</acceleration>
+		<consumption>9.4 - 8 l/100km</consumption>
+	</record>
+	<record>
+		<name>Porsche</name>
+		<model>911 Turbo S</model>
+		<torque>800 Nm</torque>
+		<power>478 kW</power>
+		<acceleration>2.7 s (0-100kmh)</acceleration>
+		<consumption>12.8 - 11.1 l/100km</consumption>
+	</record>
+	<record>
+		<name>Porsche</name>
+		<model>Cayenne Turbo Coupé</model>
+		<torque>770 Nm</torque>
+		<power>404 kW</power>
+		<acceleration>3.9 s (0-100kmh)</acceleration>
+		<consumption>13.5 - 11.6 l/100km</consumption>
+	</record>
+</cars>
