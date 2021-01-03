@@ -44,6 +44,8 @@ function stop() { clearInterval(timerInterval); }
 
 // let width = window.innerWidth;
 let height = window.innerHeight;
+
+// Urci narocnost hry
 const rozptyl = 40;
 
 function fetchImg(sources, callback) {

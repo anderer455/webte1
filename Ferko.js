@@ -1,24 +1,44 @@
 var width = window.innerWidth;
 var height = window.innerHeight;
 
-function loadImages(sources, callback) {
+// Casomiera 
+
+var uplynuly_cas = 0;
+var cas;
+
+function hodiny() {
+  uplynuly_cas++;
+  document.getElementById("time").innerHTML = uplynuly_cas;
+}
+function start() {
+  //call the first setInterval
+  cas = setInterval(hodiny, 1000);
+}
+function stop() {
+  clearInterval(cas);
+}
+
+// Nacitanie obrazkov
+function loadimages(zdroj, callback) {
   var assetDir = '/assets/ferko/';
   var images = {};
-  var loadedImages = 0;
-  var numImages = 0;
-  for (var src in sources) {
-    numImages++;
+  var loadedimages = 0;
+  var numimages = 0;
+  for (var src in zdroj) {
+    numimages++;
   }
-  for (var src in sources) {
+  for (var src in zdroj) {
     images[src] = new Image();
     images[src].onload = function () {
-      if (++loadedImages >= numImages) {
+      if (++loadedimages >= numimages) {
         callback(images);
       }
     };
-    images[src].src = assetDir + sources[src];
+    images[src].src = assetDir + zdroj[src];
   }
 }
+
+// Funkcia ktora aj ked aj ked nedate obrazok na presne spravne miesto tak stale to uzna do sitej miery
 function isNearOutline(orech, sedy_orech) {
   var a = orech;
   var o = sedy_orech;
@@ -31,15 +51,18 @@ function isNearOutline(orech, sedy_orech) {
     return false;
   }
 }
-function drawBackground(background, beachImg, text) {
+
+// Nacitanie pozadia aj s textom
+function drawBackground(background, BGImg, text) {
   var context = background.getContext();
-  context.drawImage(beachImg, 0, 0);
+  context.drawImage(BGImg, 0, 0);
   context.setAttr('font', '20pt Calibri');
   context.setAttr('textAlign', 'center');
   context.setAttr('fillStyle', 'black');
   context.fillText(text, background.getStage().width() / 2, 40);
 }
 
+// Zakladna inicializacia
 function initStage(images) {
   var stage = new Konva.Stage({
     container: 'container',
@@ -99,7 +122,7 @@ function initStage(images) {
     }
   };
 
-  var outlines = {
+  var seda_predloha = {
     orech1_grey: {
       x: 530,
       y: 300,
@@ -147,9 +170,8 @@ function initStage(images) {
 
   };
 
-  // create draggable orechs
+  // vytvori orechi s draggable atributom
   for (var key in orechs) {
-    // anonymous function to induce scope
     (function () {
       var privKey = key;
       var anim = orechs[key];
@@ -164,14 +186,11 @@ function initStage(images) {
       orech.on('dragstart', function () {
         this.moveToTop();
         orechLayer.draw();
-
+        
       });
-      /*
-       * check if orech is in the right spot and
-       * snap into place if it is
-       */
+      // Kontrola za pomoci hore spominanej funkcie ci je orech na spravnom mieste alebo velmi blizko a ak ano tak ho posunie na spravne miesto
       orech.on('dragend', function () {
-        var sedy_orech = outlines[privKey + '_grey'];
+        var sedy_orech = seda_predloha[privKey + '_grey'];
         if (!orech.inRightPlace && isNearOutline(orech, sedy_orech)) {
           orech.position({
             x: sedy_orech.x,
@@ -179,22 +198,23 @@ function initStage(images) {
           });
           orechLayer.draw();
           orech.inRightPlace = true;
-
+          // Kontrola konca hry
           if (++score >= 11) {
             var text = 'Vyhral si !';
-            drawBackground(background, images.beach, text);
+            drawBackground(background, images.BG, text);
             stop();
           }
+          //Spustenie casovaca
           if (score == 1)
             start();
-          // disable drag and drop
+          // Zrusi draggable atribut daneho orecha aby sa po dosadeni na spravne miesto s nim uz nedalo hybat 
           setTimeout(function () {
             orech.draggable(false);
           }, 50);
         }
       });
 
-      // return orech on mouseout
+      
       orech.on('mouseout', function () {
         orech.image(images[privKey]);
         orechLayer.draw();
@@ -210,12 +230,12 @@ function initStage(images) {
     })();
   }
 
-  // create orech outlines
-  for (var key in outlines) {
-    // anonymous function to induce scope
+  // Vytvori sede orechy ako predlohu
+  for (var key in seda_predloha) {
+    
     (function () {
       var imageObj = images[key];
-      var out = outlines[key];
+      var out = seda_predloha[key];
 
       var sedy_orech = new Konva.Image({
         image: imageObj,
@@ -229,16 +249,18 @@ function initStage(images) {
 
   stage.add(background);
   stage.add(orechLayer);
-
+// Vykresli pozadie
   drawBackground(
     background,
-    images.beach,
-    'Daj orechy na správne miesta!'
+    images.BG,
+    'Daj orechy na spravne miesta!'
   );
 }
 
-var sources = {
-  beach: 'BGgrey.png',
+
+// Zdroj obrazkov 
+var zdroj = {
+  BG: 'BGgrey.png',
   orech1: 'orech1.png',
   orech1_grey: 'orech1-grey.png',
   orech2: 'orech2.png',
@@ -262,19 +284,5 @@ var sources = {
   orech11: 'orech11.png',
   orech11_grey: 'orech11-grey.png',
 };
-loadImages(sources, initStage);
+loadimages(zdroj, initStage);
 
-var timeElapsed = 0;
-var myTimer;
-
-function hodiny() {
-  timeElapsed++;
-  document.getElementById("time").innerHTML = timeElapsed;
-}
-function start() {
-  //call the first setInterval
-  myTimer = setInterval(hodiny, 1000);
-}
-function stop() {
-  clearInterval(myTimer);
-}

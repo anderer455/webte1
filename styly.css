@@ -391,6 +391,9 @@ header hr {
     #brands img {
         margin-bottom: 20px;
     }
+    .done {
+        font-size: 12px;
+    }
 }
 
 @media only screen and (min-width: 995px) {
